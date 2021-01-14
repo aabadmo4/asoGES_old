@@ -20,4 +20,6 @@ Route::get("/socios/info/{id}","miController@info_socio");
 Route::get("/socios/borrar/{id}","miController@borrar_socio");
 Route::get("/actas","miController@actas");
 Route::get("/contacta","miController@contactar");
-Route::get("/buscar","miController@buscar");
+Route::get("/buscar/","miController@buscar");
+Route::get("/buscar/{termino}","miController@buscar");
+Route::get("/logout","miController@logout");

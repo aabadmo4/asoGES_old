@@ -1,16 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 class miController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view("welcome");
@@ -19,47 +11,28 @@ class miController extends Controller
     {
         return view("socios");
     }
-    public function actas()
-    {
-        return view("actas");
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create_socio()
     {
         return view("crear_socio");
-    }
-    public function buscar()
-    {
-        return view("buscar");
     }
     public function borrar_socio($id)
     {
         //return view("borrar_socio",compact("id"));
         return "borra user #".$id;
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function actas()
+    {
+        return view("actas");
+    }
     public function info_socio($id)
     {
         return view("info_socio");
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function buscar($termino)
+    {
+        return view("buscar",compact("termino"));
+    }
+    
     public function edit($id)
     {
         //
@@ -91,10 +64,10 @@ class miController extends Controller
     {
         return view("contacta");
     }
-    public function galeria()
+    public function logout()
     {
-        $alumnos=["Ana", "Sara","Antonio","Manuel"];
-        //el metodo compact() permite pasar varios parametros
-        return view("galeria",compact("alumnos"));
+        session_start();
+        session_destroy();
+        return view("welcome");
     }
 }

@@ -5,8 +5,7 @@
 @endsection
 
 @section("infoGeneral")
-
-BUSCAR UN TERMINO
+Término a buscar: "{{$termino}}".
 @endsection
 
 @section("pie")
