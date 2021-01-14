@@ -37,14 +37,6 @@ class miController extends Controller
     {
         return view("contacta");
     }
-    public function miperfil()
-    {
-        return "miperfil";
-    }
-    public function miperfil_config()
-    {
-        return env('ASOGES_URL');
-    }
     public function logout()
     {
         session_start();
