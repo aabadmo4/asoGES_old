@@ -89,6 +89,7 @@
                     <a href="http://nubezar.corp:8000/socios">Socios</a>
                     <a href="http://nubezar.corp:8000/actas">Actas</a>
                     <a href="http://nubezar.corp:8000/noticias">Noticias</a>
+                    <a href="http://nubezar.corp:8000/contacto">Contacto</a>
                 </div>
                 <div>
                     <h2>ACTAS</h2>

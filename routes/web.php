@@ -17,3 +17,4 @@ Route::get("/","PaginasController@inicio");
 Route::get("/socios","PaginasController@socios");
 Route::get("/actas","PaginasController@actas");
 Route::get("/noticias","PaginasController@noticias");
+Route::get("/contacto","PaginasController@contacto");

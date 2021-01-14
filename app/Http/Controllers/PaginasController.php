@@ -16,6 +16,9 @@ class PaginasController extends Controller
         return view('noticias');
     }
     public function actas(){
-        return view('actas ');
+        return view('actas');
+    }
+    public function contacto(){
+        return view('contacto');
     }
 }
