@@ -101,6 +101,7 @@
                     <a href="{{env('NAVBAR_LINK_SOCIOS')}}">Socios</a>
                     <a href="{{env('NAVBAR_LINK_ACTAS')}}">Actas</a>
                     <a href="{{env('ASOGES_URL')}}">Noticias</a>
+                    <a href="{{env('NAVBAR_LINK_CONTACTO')}}">Contacto</a>
                 </div>
             </div>
         </div>
