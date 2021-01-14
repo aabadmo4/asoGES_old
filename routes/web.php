@@ -22,4 +22,6 @@ Route::get("/actas","miController@actas");
 Route::get("/contacta","miController@contactar");
 Route::get("/buscar/","miController@buscar");
 Route::get("/buscar/{termino}","miController@buscar");
+Route::get("/miperfil","miController@miperfil");
+Route::get("/miperfil/configuracion","miController@miperfil_config");
 Route::get("/logout","miController@logout");

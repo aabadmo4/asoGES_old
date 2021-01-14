@@ -12,16 +12,16 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: #aaa;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
-                height: 100vh;
+                height: 99vh;
                 margin: 0;
             }
 
             .full-height {
-                height: 100vh;
+                height: 90vh;
             }
 
             .flex-center {
@@ -45,13 +45,13 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 140px;
             }
 
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
-                font-size: 13px;
+                font-size: 25px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -61,9 +61,21 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .piedepagina{
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 25px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+
+            }
         </style>
     </head>
     <body>
+        @if(isset($err))
+        Ha ocurrido un error* al procesar su solicitud. <br> *Es necesario estár logado para cerrar sesión
+        @endif
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -85,12 +97,16 @@
                 </div>
 
                 <div class="links">
-                    <a href="http://nubezar.corp:8000">Inicio</a>
-                    <a href="http://nubezar.corp:8000/socios">Socios</a>
-                    <a href="http://nubezar.corp:8000/actas">Actas</a>
-                    <a href="http://nubezar.corp:8000/noticias">Noticias</a>
+                    <a href="{{env('ASOGES_URL')}}">Inicio</a>
+                    <a href="{{env('NAVBAR_LINK_SOCIOS')}}">Socios</a>
+                    <a href="{{env('NAVBAR_LINK_ACTAS')}}">Actas</a>
+                    <a href="{{env('ASOGES_URL')}}">Noticias</a>
                 </div>
             </div>
         </div>
+        <div>
+            
+        </div>
+        <div div class="piedepagina"><a>Sistema de gestión de asociaciones - asoGES - Soluciones Informáticas NUBEZAR</a></div>
     </body>
 </html>
