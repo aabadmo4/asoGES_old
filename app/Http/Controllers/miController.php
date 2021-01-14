@@ -29,24 +29,13 @@ class miController extends Controller
     {
         return view("info_socio");
     }
-    public function buscar($termino)
+    public function buscar()
     {
-        return view("buscar",compact("termino"));
+        return view("buscar");
     }
     public function contactar()
     {
         return view("contacta");
     }
-    public function logout()
-    {
-        session_start();
-        if(isset($_SESSION["logged_user"])&!empty($_SESSION["logged_user"])){
-           session_destroy();
-            return view("welcome"); 
-        }else{
-            $err="error001";
-            return view("welcome",compact("err"));
-        }
-        
-    }
+    
 }

@@ -5,7 +5,11 @@
 @endsection
 
 @section("infoGeneral")
-Término a buscar: "{{$termino}}".
+@if(isset($_GET["termino"])&!empty($_GET["termino"]))
+Término a buscar: "{{$_GET["termino"]}}".
+@else
+No se ha introducido ningún teérmino a buscar.
+@endif
 @endsection
 
 @section("pie")
