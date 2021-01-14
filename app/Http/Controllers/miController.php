@@ -83,4 +83,8 @@ class miController extends Controller
     {
         return view("contacta");
     }
+    public function galeria()
+    {
+        return view("galeria");
+    }
 }

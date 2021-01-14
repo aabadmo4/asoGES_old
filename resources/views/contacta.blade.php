@@ -5,7 +5,7 @@
 @endsection
 
 @section("infoGeneral")
-<p>Lorem ipsum contenido generral<p>
+<p>Lorem ipsum contenido general<p>
 @endsection
 
 @section("pie")

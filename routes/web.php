@@ -19,4 +19,5 @@ Route::get("/socios/crear","miController@create");
 Route::get("/socios/info/{id}","miController@info_socio");
 Route::get("/actas","miController@actas");
 Route::get("/contacta","miController@contactar");
+Route::get("/galeria","miController@galeria");
 
