@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-class miController extends Controller
+class profileController extends Controller
 {
     public function miperfil()
     {
