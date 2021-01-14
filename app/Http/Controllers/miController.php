@@ -33,7 +33,15 @@ class miController extends Controller
     {
         return view("crear_socio");
     }
-
+    public function buscar()
+    {
+        return view("buscar");
+    }
+    public function borrar_socio($id)
+    {
+        //return view("borrar_socio",compact("id"));
+        return "borra user #".$id;
+    }
 
     /**
      * Display the specified resource.
