@@ -1,12 +1,12 @@
 @extends("layouts.plantilla")
 
 @section("cabecera")
-<h1>BORRAR SOCIO</h1>
+<div class="titulos"><h1>BORRAR SOCIO</h1></div>
+
 @endsection
 
 @section("infoGeneral")
-ELIMINAR SOCIO {{id}}
-
+<div class="subtitulos"><h4>ELIMINAR SOCIO {{id}}</h4></div>
 @endsection
 
 @section("pie")

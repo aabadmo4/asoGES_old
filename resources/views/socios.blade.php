@@ -1,19 +1,19 @@
 @extends("layouts.plantilla")
 
 @section("cabecera")
-<h1>SOCIOS</h1>
+<div class="titulos"><h1>SOCIOS</h1></div>
 @endsection
 
 @section("infoGeneral")
-INFORMACION DE LOS SOCIOS
+<div class="subtitulos"><h4>INFORMACION DE LOS SOCIOS</h4></div>
 
-<table class="table">
-  <thead class="thead-dark">
+<table class="table table-striped">
+  <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Email</th>
     </tr>
   </thead>
   <tbody>
@@ -35,39 +35,82 @@ INFORMACION DE LOS SOCIOS
       <td>the Bird</td>
       <td>@twitter</td>
     </tr>
-  </tbody>
-</table>
-
-<table class="table">
-  <thead class="thead-light">
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
+      <th scope="row">4</th>
       <td>Mark</td>
       <td>Otto</td>
       <td>@mdo</td>
     </tr>
     <tr>
-      <th scope="row">2</th>
+      <th scope="row">5</th>
       <td>Jacob</td>
       <td>Thornton</td>
       <td>@fat</td>
     </tr>
     <tr>
-      <th scope="row">3</th>
+      <th scope="row">6</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th scope="row">7</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">9</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th scope="row">10</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">11</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">12</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th scope="row">13</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">14</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">15</th>
       <td>Larry</td>
       <td>the Bird</td>
       <td>@twitter</td>
     </tr>
   </tbody>
 </table>
+
+
 
 @endsection
 

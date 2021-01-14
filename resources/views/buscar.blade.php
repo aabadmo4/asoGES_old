@@ -1,7 +1,7 @@
 @extends("layouts.plantilla")
 
 @section("cabecera")
-<h1>BUSCAR</h1>
+<div class="titulos"><h1>BUSCAR</h1></div>
 @endsection
 
 @section("infoGeneral")
