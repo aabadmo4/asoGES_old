@@ -3,31 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <title>asoGES</title>
-        <style>
-            .contenedor{
-                background-color: #F00;
-                text-align: center;
-            }
-            .infoGeneral{
-                background-color: blue;
-                margin:200px 0;
-                color: #FFF;
-            }
-            .pie{
-                background-color: #FF0;
-            }
-        </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     </head>
     <body>
-        <div class="contenedor">
+            @include("layouts.navbar")
             @yield("cabecera")
-        </div>
-        <div class="infoGeneral">
+
+            @include("layouts.card")
             @yield("infoGeneral")
-        </div>
-        <div class="pie">
+
             @yield("pie")
-            asoGES - Sistema de gestion de asociaciones - Soluciones Informáticas Nubezar
-        </div>
+            <div id="footer">asoGES - Sistema de gestion de asociaciones - Soluciones Informáticas Nubezar</div>
+            
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     </body>
 </html>
