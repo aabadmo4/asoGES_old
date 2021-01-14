@@ -11,11 +11,12 @@ if(isset($_SESSION["logged_user"])&!empty($_SESSION["logged_user"])){
         $_SESSION["notif_sin_leer"]=1;
     }
 }
+
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">asoGES</a>
+        <a class="navbar-brand" href="http://nubezar.corp:8000/">asoGES </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -47,6 +48,9 @@ if(isset($_SESSION["logged_user"])&!empty($_SESSION["logged_user"])){
                     </ul>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="http://nubezar.corp:8000/">Noticias</a>
+                </li>
+                <li class="nav-item">
                     <?php if(isset($_SESSION["logged_user"]) && !empty($_SESSION["logged_user"])){
                         echo "
                         <li class='nav-item dropdown'>
@@ -67,20 +71,11 @@ if(isset($_SESSION["logged_user"])&!empty($_SESSION["logged_user"])){
                     }
                     ?>         
                 </li>
-                
-                
-                
-                
-                
             </ul>
-
-
             <button type="button" class="btn btn-primary">
                 @ {{$_SESSION["logged_user"]}} <a href=""><span class="badge bg-secondary">{{$_SESSION["notif_sin_leer"]}}</span></a>
                 <span class="visually-hidden"></span>
             </button>
-
-
             <form class="d-flex" action="http://nubezar.corp:8000/buscar" method="get">
                 <input class="form-control me-2" type="search" placeholder="Término a buscar" aria-label="Término a buscar" name="termino">
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
