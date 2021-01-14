@@ -29,7 +29,7 @@ class miController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create_socio()
     {
         return view("crear_socio");
     }

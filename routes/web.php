@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/","miController@index");
 Route::get("/socios","miController@socios");
-Route::get("/socios/crear","miController@create");
+Route::get("/socios/crear","miController@create_socio");
 Route::get("/socios/info/{id}","miController@info_socio");
 Route::get("/actas","miController@actas");
 Route::get("/contacta","miController@contactar");
-Route::get("/galeria","miController@galeria");
-

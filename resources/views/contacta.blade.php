@@ -1,7 +1,7 @@
 @extends("layouts.plantilla")
 
 @section("cabecera")
-<h1>Contacto</h1>
+<h1>Contacta</h1>
 @endsection
 
 @section("infoGeneral")

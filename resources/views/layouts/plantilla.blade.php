@@ -9,7 +9,6 @@
             @include("layouts.navbar")
             @yield("cabecera")
 
-            @include("layouts.card")
             @yield("infoGeneral")
 
             @yield("pie")

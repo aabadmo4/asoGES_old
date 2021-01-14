@@ -9,9 +9,6 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="http://nubezar.corp:8000/">Inicio</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://nubezar.corp:8000/">Link</a>
-                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Socios
