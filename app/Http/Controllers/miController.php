@@ -85,6 +85,8 @@ class miController extends Controller
     }
     public function galeria()
     {
-        return view("galeria");
+        $alumnos=["Ana", "Sara","Antonio","Manuel"];
+        //el metodo compact() permite pasar varios parametros
+        return view("galeria",compact("alumnos"));
     }
 }
