@@ -22,7 +22,8 @@ class miController extends Controller
     }
     public function actas()
     {
-        return view("actas");
+        $actas=["Junta General Ordiniaria", "Junta General extraordinaria", "Junta General Extraordinaria", "Balence de Cuentas"];
+        return view("actas",compact("actas"));
     }
     public function info_socio($id)
     {
@@ -32,34 +33,6 @@ class miController extends Controller
     {
         return view("buscar",compact("termino"));
     }
-    
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
     public function contactar()
     {
         return view("contacta");
@@ -67,7 +40,12 @@ class miController extends Controller
     public function logout()
     {
         session_start();
-        session_destroy();
-        return view("welcome");
+        if(isset($_SESSION["logged_user"])&!empty($_SESSION["logged_user"])){
+           session_destroy();
+            return view("welcome"); 
+        }else{
+            return "No es posible desconectar una sesión no iniciada.";
+        }
+        
     }
 }
