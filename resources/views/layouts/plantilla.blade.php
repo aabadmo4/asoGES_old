@@ -19,8 +19,10 @@ session_start();
     </head>
     <body>
             @include("layouts.navbar")
+            
             @yield("cabecera")
 
+            
             @yield("infoGeneral")
 
             @yield("pie")

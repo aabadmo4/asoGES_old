@@ -1,17 +1,16 @@
 <?php
-$_SESSION["logged_user"]="adan";
-if(isset($_SESSION["logged_user"])&!empty($_SESSION["logged_user"])){
-    if(isset($_SESSION["notif_sin_leer"])){
-        if($_SESSION["notif_sin_leer"]<1){
-            $_SESSION["notif_sin_leer"]=1;
-        }else{
+$_SESSION["logged_user"] = "adan";
+if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
+    if (isset($_SESSION["notif_sin_leer"])) {
+        if ($_SESSION["notif_sin_leer"] < 1) {
+            $_SESSION["notif_sin_leer"] = 1;
+        } else {
             $_SESSION["notif_sin_leer"]++;
         }
-    }else{
-        $_SESSION["notif_sin_leer"]=1;
+    } else {
+        $_SESSION["notif_sin_leer"] = 1;
     }
 }
-
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -51,7 +50,8 @@ if(isset($_SESSION["logged_user"])&!empty($_SESSION["logged_user"])){
                     <a class="nav-link active" aria-current="page" href="http://nubezar.corp:8000/">Noticias</a>
                 </li>
                 <li class="nav-item">
-                    <?php if(isset($_SESSION["logged_user"]) && !empty($_SESSION["logged_user"])){
+                    <?php
+                    if (isset($_SESSION["logged_user"]) && !empty($_SESSION["logged_user"])) {
                         echo "
                         <li class='nav-item dropdown'>
                     <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
@@ -66,12 +66,13 @@ if(isset($_SESSION["logged_user"])&!empty($_SESSION["logged_user"])){
                     </ul>
                 </li>
                         ";
-                    }else{
+                    } else {
                         echo "<a class='nav-link disabled' href='#' tabindex='-1' aria-disabled='true'>Mi Perfil</a>";
                     }
                     ?>         
                 </li>
             </ul>
+            <label class="{{env('ORGANIZACION_CLIENTE')}}}">ASOCIACIÓN JUVENIL ALLAGESNLP</label>
             <button type="button" class="btn btn-primary">
                 @ {{$_SESSION["logged_user"]}} <a href=""><span class="badge bg-secondary">{{$_SESSION["notif_sin_leer"]}}</span></a>
                 <span class="visually-hidden"></span>
