@@ -92,7 +92,7 @@
                     <a href="http://nubezar.corp:8000/contacto">Contacto</a>
                 </div>
                 <div>
-                    <h2>CONTACTO</h2>
+                    <h2>CONTACTOd</h2>
                     <form action="enviar.php" method="POST">
                     <table>
                         <tr>
