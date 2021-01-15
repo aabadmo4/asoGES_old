@@ -6,10 +6,15 @@ class profileController extends Controller
     public function miperfil()
     {
         session_start();
-        return view("miperfil");
+        if(isset($_SESSION["logged_user"])){
+            return view("miperfil");
+        }else{
+            $err = "error002";
+            return view("welcome", compact("err"));
+        }
     }
     public function miperfil_config()
     {
-        return env('ASOGES_URL');
+        return view("welcome");
     }
 }
