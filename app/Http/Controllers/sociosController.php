@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 class sociosController extends Controller {
@@ -36,14 +37,8 @@ class sociosController extends Controller {
         }
     }
 
-    public function info_socio($id) {
-        session_start();
-        if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
-            return view("info_socio");
-        } else {
-            $err = "error001";
-            return view("welcome", compact("err"));
-        }
+    public function info_socio() {
+        return view("info_socio");
     }
 
     public function buscar() {
@@ -59,6 +54,7 @@ class sociosController extends Controller {
             return view("welcome", compact("err"));
         }
     }
+
     public function noticias() {
         session_start();
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
@@ -68,4 +64,5 @@ class sociosController extends Controller {
             return view("welcome", compact("err"));
         }
     }
+
 }
