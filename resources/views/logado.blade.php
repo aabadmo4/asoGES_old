@@ -2,6 +2,7 @@
     @if(isset($_GET["txtpassword"]))
     <?php
     $_SESSION["logged_user"]=$_GET["txtuser"];
+    $_SESSION["logged_user_id"]="1";
     $_COOKIE["session"]=true;
     ?>
     <!DOCTYPE html>

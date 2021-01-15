@@ -83,12 +83,25 @@
                 vertical-align: top;
                 border: 1px solid #000;
             }
+            .error{
+                text-align: center;
+                color: black;
+                text-decoration: underline overline;
+            }
         </style>
     </head>
     @yield("cabecera")
     <body>
         @if(isset($err))
-        Ha ocurrido un error* al procesar su solicitud. <br> *Es necesario estár logado para cerrar sesión
+
+        @if($err="002")
+        <div class="error">
+            <img src="http://nubezar.corp/APIRest/img/alert.png" alt="" width="20px" height="15px" />
+            Es necesario iniciar sesión para acceder al contenido solicitado 
+            ¿Quieres iniciar sesión? Haz click <a href="{{env('NAVBAR_LINK_LOGIN')}}">aquí</a>.
+            <img src="http://nubezar.corp/APIRest/img/alert.png" alt="" width="20px" height="15px" />
+        </div>
+        @endif
         @endif
         <div class="flex-center position-ref full-height">
             <div class="content">

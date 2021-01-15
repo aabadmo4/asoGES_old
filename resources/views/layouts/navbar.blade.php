@@ -58,7 +58,7 @@ if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
                         Mi Perfil
                     </a>
                     <ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
-                        <li><a class='dropdown-item' href=''>Editar perfil</a></li>
+                        <li><a class='dropdown-item' href='".env('NAVBAR_LINK_MIPERFIL')."'>Editar perfil</a></li>
                         <li><hr class='dropdown-divider'></li>
                         <li><a class='dropdown-item' href='#'>Configuración</a></li>
                         <li><hr class='dropdown-divider'></li>
@@ -74,9 +74,9 @@ if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
             </ul>
             <label class="{{env('ORGANIZACION_CLIENTE')}}}">ASOCIACIÓN JUVENIL ALLAGESNLP</label>
             <button type="button" class="btn btn-primary">
-                @ {{$_SESSION["logged_user"]}} <a href=""><span class="badge bg-secondary">{{$_SESSION["notif_sin_leer"]}}</span></a>
+                @ {{$_SESSION["logged_user"]}} <a href="http://nubezar.corp:8000/miperfil"><span class="badge bg-secondary">{{$_SESSION["notif_sin_leer"]}}</span></a>
                 <span class="visually-hidden"></span>
-            </button>
+            </a>
             <form class="d-flex" action="http://nubezar.corp:8000/buscar" method="get">
                 <input class="form-control me-2" type="search" placeholder="Término a buscar" aria-label="Término a buscar" name="termino">
                 <button class="btn btn-outline-success" type="submit">Buscar</button>

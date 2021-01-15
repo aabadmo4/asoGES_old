@@ -5,7 +5,8 @@ class profileController extends Controller
 {
     public function miperfil()
     {
-        return "miperfil";
+        session_start();
+        return view("miperfil");
     }
     public function miperfil_config()
     {

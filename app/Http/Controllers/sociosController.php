@@ -38,7 +38,13 @@ class sociosController extends Controller {
     }
 
     public function info_socio() {
-        return view("info_socio");
+        session_start();
+        if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
+            return view("info_socio");
+        } else {
+            $err = "error002";
+            return view("welcome", compact("err"));
+        }
     }
 
     public function buscar() {

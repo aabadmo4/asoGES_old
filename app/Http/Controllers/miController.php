@@ -18,7 +18,8 @@ class miController extends Controller {
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
             return view("socios");
         } else {
-            return view("login", compact("redirect"));
+            $err = "error002";
+            return view("welcome", compact("err"));
         }
     }
 
@@ -37,7 +38,7 @@ class miController extends Controller {
             $actas = ["Junta General Ordiniaria", "Junta General extraordinaria", "Junta General Extraordinaria", "Balence de Cuentas"];
             return view("actas", compact("actas"));
         } else {
-            $err = "error001";
+            $err = "error002";
             return view("welcome", compact("err"));
         }
     }
@@ -47,7 +48,7 @@ class miController extends Controller {
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
             return view("info_socio");
         } else {
-            $err = "error001";
+            $err = "error002";
             return view("welcome", compact("err"));
         }
     }
@@ -61,7 +62,7 @@ class miController extends Controller {
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
             return view("contacta");
         } else {
-            $err = "error001";
+            $err = "error002";
             return view("welcome", compact("err"));
         }
     }
@@ -70,7 +71,7 @@ class miController extends Controller {
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
             return view("noticias");
         } else {
-            $err = "error001";
+            $err = "error002";
             return view("welcome", compact("err"));
         }
     }
