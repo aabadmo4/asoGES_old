@@ -8,12 +8,11 @@ class sessionController extends Controller {
 
     public function loginPage() {
         session_start();
-        $_SESSION["logged_user"] = "adanabad";
         return view("login");
     }
 
     public function logado() {
-        start_session();
+        session_start();
         return view("logado");
     }
 

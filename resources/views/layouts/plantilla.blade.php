@@ -1,9 +1,3 @@
-<?php
-$has_session = session_status() == PHP_SESSION_ACTIVE;
-echo $has_session;
-session_start();
-?>
-
 <!DOCTYPE html>
 <html>
     <head>

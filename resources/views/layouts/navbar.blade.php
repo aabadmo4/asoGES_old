@@ -47,7 +47,7 @@ if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="http://nubezar.corp:8000/">Noticias</a>
+                    <a class="nav-link active" aria-current="page" href="{{env('NAVBAR_LINK_NOTICIAS')}}">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <?php

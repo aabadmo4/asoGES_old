@@ -26,3 +26,4 @@ Route::get("/miperfil/configuracion","profileController@miperfil_config");
 Route::get("/logout","sessionController@logout");
 Route::get("/login","sessionController@loginPage");
 Route::get("/_login","sessionController@logado");
+Route::get("/noticias","miController@noticias");

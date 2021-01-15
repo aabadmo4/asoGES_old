@@ -165,6 +165,9 @@
                 <!-- <p>Don't have an account!</p>  -->
                 <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> ¿No estás registrado? Crea tu cuenta.</button>
                 <a href="http://nubezar.corp:8000/" id="volver_asoges"><i class="fas fa-angle-left"></i> Volver a Inicio - asoGES</a>
+                @if(isset($redirect))
+                <input type="hidden" value="{{$redirect}}" name="redirect">
+                @endif
             </form>
 
             <form action="/reset/password/" class="form-reset">
@@ -181,7 +184,7 @@
                     <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Registrarse con Google</span> </button>
                 </div>
 
-                <p style="text-align:center">O INTROCE TUS DATOS</p>
+                <p style="text-align:center">O INTRODUCE TUS DATOS</p>
 
                 <input type="text" id="user-name" class="form-control" placeholder="Nombre completo" required="" autofocus="">
                 <input type="email" id="user-email" class="form-control" placeholder="Correo electrónico" required autofocus="">
