@@ -1,5 +1,5 @@
+
 <?php
-$_SESSION["logged_user"] = "adan";
 if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
     if (isset($_SESSION["notif_sin_leer"])) {
         if ($_SESSION["notif_sin_leer"] < 1) {
