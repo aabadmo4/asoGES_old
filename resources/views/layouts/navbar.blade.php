@@ -29,7 +29,7 @@ if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
                         Socios
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="http://nubezar.corp:8000/socios/crear/">Crear</a></li>
+                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_SOCIOS_CREATE')}}">Crear</a></li>
                         <li><a class="dropdown-item" href="#">Borrar</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_SOCIOS')}}">Consultar socios</a></li>

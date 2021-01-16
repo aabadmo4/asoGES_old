@@ -2,15 +2,16 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get("/","miController@index");
-Route::get("/socios","miController@socios");
-Route::get("/socios/crear","miController@create_socio");
-Route::get("/socios/info_socio","sociosController@info_socio");
-Route::get("/socios/borrar","miController@borrar_socio");
+Route::get("/charters","miController@socios");
+Route::get("/charters/createCharter","sociosController@createCharter");
+Route::get("/charters/info_socio","sociosController@info_socio");
+Route::get("/charters/borrar","miController@borrar_socio");
 Route::get("/actas","miController@actas");
 Route::get("/contacta","miController@contactar");
 Route::get("/buscar","miController@buscar");
 Route::get("/profile/","profileController@miperfil");
 Route::get("/profile/config","profileController@miperfil_config");
+Route::get("/profile/resetPassword","profileController@resetPassword");
 Route::get("/logout","sessionController@logout");
 Route::get("/login","sessionController@loginPage");
 Route::get("/_login","sessionController@logado");

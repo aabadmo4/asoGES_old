@@ -163,15 +163,15 @@
                 <a href="#" id="forgot_pswd">¿Has olvidado tu contraseña??</a>
                 <hr>
                 <!-- <p>Don't have an account!</p>  -->
-                <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> ¿No estás registrado? Crea tu cuenta.</button>
+                <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> ¿No estás registrado? Solicita tu cuenta.</button>
                 <a href="http://nubezar.corp:8000/" id="volver_asoges"><i class="fas fa-angle-left"></i> Volver a Inicio - asoGES</a>
                 @if(isset($redirect))
                 <input type="hidden" value="{{$redirect}}" name="redirect">
                 @endif
             </form>
 
-            <form action="/reset/password/" class="form-reset">
-                <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+            <form action="/profile/resetPassword" class="form-reset" method="POST">
+                <input type="email" id="resetEmail" class="form-control" placeholder="Correo electrónico" required="" autofocus="">
                 <button class="btn btn-primary btn-block" type="submit">Repite la contraseña</button>
                 <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Volver</a>
             </form>
@@ -185,13 +185,17 @@
                 </div>
 
                 <p style="text-align:center">O INTRODUCE TUS DATOS</p>
+                <p style="text-align:center"> El registro será revisado por el Órgano Gestor correspondiente, y le comunicaremos su rrsolución al correo electrónico indicado.  </p>
+                <input type="text" id="user-name" class="form-control" placeholder="Nombre" required="" autofocus="">
+                <input type="text" id="user-name" class="form-control" placeholder="Apellidos" required="" autofocus="">
+                <input type="text" id="user-name" class="form-control" placeholder="Nº de socio" required="" autofocus="">
 
-                <input type="text" id="user-name" class="form-control" placeholder="Nombre completo" required="" autofocus="">
                 <input type="email" id="user-email" class="form-control" placeholder="Correo electrónico" required autofocus="">
+                <input type="email" id="user-email" class="form-control" placeholder="Usuario" required autofocus="">
                 <input type="password" id="user-pass" class="form-control" placeholder="Contraseña" required autofocus="">
                 <input type="password" id="user-repeatpass" class="form-control" placeholder="Repite la contraseña" required autofocus="">
 
-                <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Registrarse</button>
+                <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Solicitar registro</button>
                 <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Volver</a>
             </form>
             <br>

@@ -17,8 +17,9 @@ class sociosController extends Controller {
         }
     }
 
-    public function create_socio() {
-        return view("crear_socio");
+    public function createCharter() {
+        session_start();
+        return view("createCharter");
     }
 
     public function borrar_socio($id) {

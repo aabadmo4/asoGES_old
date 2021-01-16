@@ -7,7 +7,7 @@ consumiendo webservive apirest nubezar http://nubezar.corp/APIRest/index1?opcion
 $url='http://nubezar.corp/APIRest/?opcion=getPartner&id=' . $_SESSION["logged_user_id"];
 $data = json_decode(file_get_contents($url), true);
 if (empty($data['id'])) {
-    echo "El id solicitado no corresponde a ningun usuario";
+    echo "El id solicitado no corresponde a ningun socio";
     exit();
 }
 ?>

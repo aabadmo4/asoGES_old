@@ -7,6 +7,11 @@
 @section("infoGeneral")
 <div class="subtitulos"><h4>INFORMACIÓN SOBRE ACTAS</h4></div>
 
+<?php
+$url='http://nubezar.corp/APIRest/?opcion=getPartners';
+echo $dato=file_get_contents($url);
+?>
+<br>
 
 <table class="table table-striped">
   <thead>

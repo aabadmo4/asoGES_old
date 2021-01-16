@@ -23,9 +23,6 @@ class miController extends Controller {
         }
     }
 
-    public function create_socio() {
-        return view("crear_socio");
-    }
 
     public function borrar_socio($id) {
         //return view("borrar_socio",compact("id"));
