@@ -11,18 +11,19 @@ if (empty($data['id'])) {
 }
 ?>
 @section("cabecera")
+<div class="titulos"><h1>MI PERFIL</h1></div>
+
 @endsection
 
 @section("infoGeneral")
 <div class="contenido">
-    <div class="titulos"><h1>INFO DEL SOCIO</h1></div>
-    <table>
+    
+    <table class="tablafoto">
         <tr>
-            <td><b>Id: </b></td>
-            <td>{{$data['id']}}</td> 
+            <td><img src="http://nubezar.corp/APIRest/img/avatar.png" alt="" width="30%" height="30%" /></td>
         </tr>
     </table>
-    <form>
+    <form >
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Nombre</label>
@@ -50,7 +51,7 @@ if (empty($data['id'])) {
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputCity">Municipio</label>
-                <input type="text" class="form-control" id="inputCity" value="{{$data['municipio']}}" readonly>
+                <input type="text" class="form-control" id="inputCity" readonly>
             </div>
             <div class="form-group col-md-4">
                 <label for="inputState">Provincia</label>
@@ -67,6 +68,7 @@ if (empty($data['id'])) {
         </div>
         <div class="form-group">
             <div class="form-check">
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
                 <input class="form-check-input" type="checkbox" id="gridCheck">
                 <label class="form-check-label" for="gridCheck">
                     Aceptación RGPD. (Anexar doc.)
