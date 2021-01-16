@@ -27,6 +27,7 @@ class sessionController extends Controller {
     public function logout() {
         session_start();
         session_destroy();
+        session_start();
         return view("welcome");
     }
 }

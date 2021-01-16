@@ -16,10 +16,9 @@ if (empty($data['id'])) {
 @endsection
 
 @section("infoGeneral")
-<table>
+<table class="tablafoto">
     <tr>
-        <td><b>Id: </b></td>
-        <td>{{$data['id']}}</td> 
+        <td><img src="http://nubezar.corp/APIRest/img/avatar.png" alt="" width="30%" height="30%" /></td>
     </tr>
 </table>
 <form>
@@ -67,6 +66,7 @@ if (empty($data['id'])) {
     </div>
     <div class="form-group">
         <div class="form-check">
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
             <input class="form-check-input" type="checkbox" id="gridCheck">
             <label class="form-check-label" for="gridCheck">
                 Aceptación RGPD. (Anexar doc.)

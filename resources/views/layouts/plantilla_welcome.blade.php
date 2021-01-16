@@ -9,6 +9,7 @@
         <style>
             html, body {
                 background-color: #aaa;
+                background-image: url("https://nubezar.corp/APIRest/img/background.png");
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -38,10 +39,14 @@
 
             .content {
                 text-align: center;
+                -webkit-text-stroke: 2px black;
+                color: transparent;
             }
 
             .title {
                 font-size: 140px;
+                -webkit-text-stroke: 4px black;
+                color: transparent;
             }
 
             .links > a {
@@ -52,6 +57,8 @@
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+                -webkit-text-stroke: 2px black;
+                color: transparent;
             }
 
             .m-b-md {
@@ -64,14 +71,20 @@
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
+                -webkit-text-stroke: 1.5px black;
+                color: transparent;
+                text-align:center;
 
             }
             .titulos{
                 text-align: center;
+                -webkit-text-stroke: 2px black;
+                color: transparent;
             }
             table {
                 width: 70%;
                 border: 1px solid #000;
+                 
             }
             th, td {
                 width: 25%;
