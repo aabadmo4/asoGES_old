@@ -14,6 +14,7 @@
                 text-align:center;
                 -webkit-text-stroke: 2px black;
                 color: transparent;
+                height: 40px;
             }
             .subtitulos{
                 text-align:center;
@@ -27,6 +28,14 @@
             .tablafoto{
                 float: right;
             }
+            .contenido{
+                width: 900px;
+                margin: 0.8rem;
+                padding: 1rem;
+                border: 2px solid #ccc;
+                text-align: center;
+            }
+
         </style>
     </head>
     <body>

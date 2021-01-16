@@ -12,7 +12,7 @@ if (empty($data['id'])) {
 ?>
 
 @section("cabecera")
-<div class="titulos"><h1>INFO DEL SOCIO</h1></div>
+<div class="titulos"><h1>CONSULTAR SOCIO</h1></div>
 @endsection
 
 @section("infoGeneral")
