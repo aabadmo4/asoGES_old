@@ -4,13 +4,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Inicio - asoGES</title>
-
-        <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
         <style>
             html, body {
                 background-color: #aaa;
@@ -94,15 +89,14 @@
     @yield("cabecera")
     <body>
         @if(isset($err))
-
-        @if($err="002")
-        <div class="error">
-            <img src="http://nubezar.corp/APIRest/img/alert.png" alt="" width="20px" height="15px" />
-            Es necesario iniciar sesión para acceder al contenido solicitado 
-            ¿Quieres iniciar sesión? Haz click <a href="{{env('NAVBAR_LINK_LOGIN')}}">aquí</a>.
-            <img src="http://nubezar.corp/APIRest/img/alert.png" alt="" width="20px" height="15px" />
-        </div>
-        @endif
+            @if($err="002")
+                <div class="error">
+                    <img src="http://nubezar.corp/APIRest/img/alert.png" alt="" width="20px" height="15px" />
+                    Es necesario iniciar sesión para acceder al contenido solicitado 
+                    ¿Quieres iniciar sesión? Haz click <a href="{{env('NAVBAR_LINK_LOGIN')}}">aquí</a>.
+                    <img src="http://nubezar.corp/APIRest/img/alert.png" alt="" width="20px" height="15px" />
+                </div>
+            @endif
         @endif
         <div class="flex-center position-ref full-height">
             <div class="content">

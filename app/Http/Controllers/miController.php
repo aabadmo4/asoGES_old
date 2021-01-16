@@ -44,11 +44,6 @@ class miController extends Controller {
     }
     public function noticias() {
         session_start();
-        if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
-            return view("noticias");
-        } else {
-            $err = "error002";
-            return view("welcome", compact("err"));
-        }
+        return view("noticias");
     }
 }
