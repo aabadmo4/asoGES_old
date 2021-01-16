@@ -106,7 +106,7 @@
 
                 <div class="links">
                     <a href="{{env('ASOGES_URL')}}">Inicio</a>
-                    <a href="{{env('NAVBAR_LINK_SOCIOS')}}">Socios</a>
+                    <a href="{{env('NAVBAR_LINK_PARTNERS')}}">Socios</a>
                     <a href="{{env('NAVBAR_LINK_ACTAS')}}">Actas</a>
                     <a href="{{env('NAVBAR_LINK_NOTICIAS')}}">Noticias</a>
                     <a href="{{env('NAVBAR_LINK_CONTACTO')}}">Contacto</a>

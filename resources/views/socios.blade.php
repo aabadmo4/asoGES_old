@@ -23,7 +23,7 @@
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
-            <td><a href="{{env('NAVBAR_LINK_SOCIOS')}}/info_socio?id=1" class="btn btn-success">Ver</a>
+            <td><a href="{{env('NAVBAR_LINK_PARTNERS')}}/info_socio?id=1" class="btn btn-success">Ver</a>
                 <a href="#" class="btn btn-warning">Editar</a>
                 <a href="#" class="btn btn-danger">Borrar</a>
             </td>

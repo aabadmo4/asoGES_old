@@ -28,7 +28,7 @@ if (empty($data['not_read'])) {
                         <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_SOCIOS_CREATE')}}">Crear</a></li>
                         <li><a class="dropdown-item" href="#">Borrar</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_SOCIOS')}}">Consultar socios</a></li>
+                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_PARTNERS')}}">Consultar socios</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -36,7 +36,7 @@ if (empty($data['not_read'])) {
                         Actas
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="">Crear</a></li>
+                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_CHARTERS')}}/create">Crear</a></li>
                         <li><a class="dropdown-item" href="#">Borrar</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_ACTAS')}}">Registro</a></li>
