@@ -7,8 +7,6 @@ class miController extends Controller {
         return view("welcome");
     }
 
-
-
     public function charters() {
         session_start();
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {

@@ -23,11 +23,11 @@ echo $dato=file_get_contents($url);
     </tr>
   </thead>
   <tbody>
-    <?php $longitud = count($actas); ?>
+    <?php $longitud = count($charters); ?>
     @for($i=0; $i<$longitud; $i++){
     <tr>
         <th scope="row">{{$i}}</th>
-        <td>{{$actas[$i]}}</td>
+        <td>{{$charters[$i]}}</td>
         <td>.</td>
         <td>.</td>
     </tr>
