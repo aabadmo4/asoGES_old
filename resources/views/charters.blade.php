@@ -5,6 +5,7 @@
 @endsection
 
 @section("infoGeneral")
+<div class="contenido">
 <div class="subtitulos"><h4>INFORMACIÓN SOBRE ACTAS</h4></div>
 
 <?php
@@ -35,7 +36,7 @@ echo $dato=file_get_contents($url);
     }
   </tbody>
 </table>
-
+</div>
 @endsection
 
 @section("pie")

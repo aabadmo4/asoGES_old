@@ -8,7 +8,7 @@ Route::get("/partners/info_socio","sociosController@info_socio");
 Route::get("/partners/borrar","miController@borrar_socio");
 Route::get("/charters","chartersController@charters");
 Route::get("/charters/create","chartersController@createCharter");
-Route::get("/contacta","miController@contactar");
+Route::get("/contact","miController@contactar");
 Route::get("/buscar","miController@buscar");
 Route::get("/profile/","profileController@profile");
 Route::get("/profile/config","profileController@miperfil_config");

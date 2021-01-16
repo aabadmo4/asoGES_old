@@ -5,7 +5,12 @@ use Illuminate\Http\Request;
 class sessionController extends Controller {
     public function loginPage() {
         session_start();
-        return view("login");
+        if(isset($_SESSION["logged_user"])){
+            return view("welcome");
+        }else{
+            return view("login");
+        }
+        
     }
 
     public function logado() {
@@ -20,6 +25,7 @@ class sessionController extends Controller {
             echo "err notread";
             exit();
         }else{
+            $logged=1;
             return view("logado");
         }
     }

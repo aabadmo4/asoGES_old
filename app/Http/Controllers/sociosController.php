@@ -11,7 +11,7 @@ class sociosController extends Controller {
     public function partners() {
         session_start();
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
-            return view("socios");
+            return view("partners");
         } else {
             return view("login", compact("redirect"));
         }

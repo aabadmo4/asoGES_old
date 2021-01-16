@@ -124,9 +124,10 @@
                     <a href="{{env('NAVBAR_LINK_NOTICIAS')}}">Noticias</a>
                     <a href="{{env('NAVBAR_LINK_CONTACTO')}}">Contacto</a>
                     @if(isset($_SESSION["logged_user"]))
-                        <a href="{{env('NAVBAR_LINK_LOGIN')}}">Iniciar sesión</a>
-                    @elseif(!isset($_SESSION["logged_user"]))
                         <a href="{{env('NAVBAR_LINK_LOGOUT')}}">Cerrar sesión</a>
+                    @endif
+                    @if(!isset($_SESSION["logged_user"]))
+                        <a href="{{env('NAVBAR_LINK_LOGIN')}}">Iniciar sesión</a>
                     @endif
                 </div>
             </div>

@@ -35,6 +35,9 @@
                 border: 2px solid #ccc;
                 text-align: center;
             }
+            .footer{
+                opacity: .88;
+            }
 
         </style>
     </head>
@@ -45,7 +48,7 @@
             @yield("infoGeneral")
         </div>
         @yield("pie")
-        <div id="footer" style="text-align: center; background-color: grey; color:white"><strong>asoGES - Sistema de gestion de asociaciones - {{env('ORGANIZACION_CLIENTE')}} - Soluciones Informáticas Nubezar</strong></div>
+        <div class="footer" style="text-align: center; background-color: grey; color:white"><strong>asoGES - Sistema de gestion de asociaciones - {{env('ORGANIZACION_CLIENTE')}} - Soluciones Informáticas Nubezar</strong></div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
