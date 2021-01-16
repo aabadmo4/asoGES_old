@@ -1,11 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 class sessionController extends Controller {
-
     public function loginPage() {
         session_start();
         return view("login");
@@ -16,18 +13,20 @@ class sessionController extends Controller {
         $_SESSION["logged_user"] = $_GET["txtuser"];
         $_SESSION["logged_user_id"] = 1;
         $_COOKIE["session"] = true;
-        return view("logado");
+
+        $url = 'http://nubezar.corp/APIRest/?opcion=addSession&user_id='.$_SESSION["logged_user_id"].'&idsession='. session_id();
+        $data = json_decode(file_get_contents($url), true);
+        if (empty($data['id'])) {
+            echo "err notread";
+            exit();
+        }else{
+            return view("logado");
+        }
     }
 
     public function logout() {
         session_start();
-        if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
-            session_destroy();
-            return view("welcome");
-        } else {
-            $err = "error001";
-            return view("welcome", compact("err"));
-        }
+        session_destroy();
+        return view("welcome");
     }
-
 }

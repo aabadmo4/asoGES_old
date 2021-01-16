@@ -116,6 +116,7 @@
                     <a href="{{env('NAVBAR_LINK_NOTICIAS')}}">Noticias</a>
                     <a href="{{env('NAVBAR_LINK_CONTACTO')}}">Contacto</a>
                     <a href="{{env('NAVBAR_LINK_LOGIN')}}">Iniciar sesión</a>
+                    <a href="{{env('NAVBAR_LINK_LOGOUT')}}">Cerrar sesión</a>
                 </div>
             </div>
         </div>
