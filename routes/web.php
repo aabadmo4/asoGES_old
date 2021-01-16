@@ -2,11 +2,11 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get("/","miController@index");
-Route::get("/charters","miController@socios");
-Route::get("/charters/createCharter","sociosController@createCharter");
-Route::get("/charters/info_socio","sociosController@info_socio");
-Route::get("/charters/borrar","miController@borrar_socio");
-Route::get("/actas","miController@actas");
+Route::get("/partners","sociosController@partners");
+Route::get("/partners/create","sociosController@createPartner");
+Route::get("/partners/info_socio","sociosController@info_socio");
+Route::get("/partners/borrar","miController@borrar_socio");
+Route::get("/charters","miController@charters");
 Route::get("/contacta","miController@contactar");
 Route::get("/buscar","miController@buscar");
 Route::get("/profile/","profileController@profile");

@@ -8,7 +8,7 @@ class sociosController extends Controller {
         return view("welcome");
     }
 
-    public function socios() {
+    public function partners() {
         session_start();
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
             return view("socios");
@@ -17,9 +17,9 @@ class sociosController extends Controller {
         }
     }
 
-    public function createCharter() {
+    public function createPartner() {
         session_start();
-        return view("createCharter");
+        return view("createPartner");
     }
 
     public function borrar_socio($id) {

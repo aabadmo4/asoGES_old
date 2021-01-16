@@ -68,7 +68,7 @@ if (empty($data['not_read'])) {
                     ?>         
                 </li>
             </ul>
-            <label class="{{env('ORGANIZACION_CLIENTE')}}}">ASOCIACIÓN JUVENIL ALLAGESNLP</label>
+            <label><b>{{env('ORGANIZACION_CLIENTE')}}</b></label>
             <button type="button" class="btn btn-primary">
                 @ {{$_SESSION["logged_user"]}} <a href="{{env('NAVBAR_LINK_MIPERFIL')}}"><span class="badge bg-secondary">{{$_SESSION["notif_sin_leer"]}}</span></a>
                 <span class="visually-hidden"></span>

@@ -7,33 +7,13 @@ class miController extends Controller {
         return view("welcome");
     }
 
-    
-    
 
-    
-    
-    
-    public function socios() {
+
+    public function charters() {
         session_start();
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
-            return view("socios");
-        } else {
-            $err = "error002";
-            return view("welcome", compact("err"));
-        }
-    }
-
-
-    public function borrar_socio($id) {
-        //return view("borrar_socio",compact("id"));
-        return "borra user #" . $id;
-    }
-
-    public function actas() {
-        session_start();
-        if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
-            $actas = ["Junta General Ordiniaria", "Junta General extraordinaria", "Junta General Extraordinaria", "Balence de Cuentas"];
-            return view("actas", compact("actas"));
+            $charters = ["Junta General Ordiniaria", "Junta General extraordinaria", "Junta General Extraordinaria", "Balence de Cuentas"];
+            return view("charters", compact("charters"));
         } else {
             $err = "error002";
             return view("welcome", compact("err"));
@@ -51,6 +31,7 @@ class miController extends Controller {
     }
 
     public function buscar() {
+        session_start();
         return view("buscar");
     }
 
