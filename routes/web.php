@@ -9,7 +9,7 @@ Route::get("/charters/borrar","miController@borrar_socio");
 Route::get("/actas","miController@actas");
 Route::get("/contacta","miController@contactar");
 Route::get("/buscar","miController@buscar");
-Route::get("/profile/","profileController@miperfil");
+Route::get("/profile/","profileController@profile");
 Route::get("/profile/config","profileController@miperfil_config");
 Route::get("/profile/resetPassword","profileController@resetPassword");
 Route::get("/logout","sessionController@logout");

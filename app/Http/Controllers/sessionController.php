@@ -13,6 +13,9 @@ class sessionController extends Controller {
 
     public function logado() {
         session_start();
+        $_SESSION["logged_user"] = $_GET["txtuser"];
+        $_SESSION["logged_user_id"] = 1;
+        $_COOKIE["session"] = true;
         return view("logado");
     }
 

@@ -1,15 +1,11 @@
-
 <?php
-if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
-    if (isset($_SESSION["notif_sin_leer"])) {
-        if ($_SESSION["notif_sin_leer"] < 1) {
-            $_SESSION["notif_sin_leer"] = 1;
-        } else {
-            $_SESSION["notif_sin_leer"]++;
-        }
-    } else {
-        $_SESSION["notif_sin_leer"] = 1;
-    }
+$url = 'http://nubezar.corp/APIRest/?opcion=getNotificationsNotRead&user_id=1';
+$data = json_decode(file_get_contents($url), true);
+if (empty($data['not_read'])) {
+    echo "err notread";
+    exit();
+} else {
+    $_SESSION["notif_sin_leer"] = $data['not_read'];
 }
 ?>
 
@@ -58,9 +54,9 @@ if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
                         Mi Perfil
                     </a>
                     <ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
-                        <li><a class='dropdown-item' href='".env('NAVBAR_LINK_MIPERFIL')."'>Editar perfil</a></li>
+                        <li><a class='dropdown-item' href='" . env('NAVBAR_LINK_MIPERFIL') . "'>Editar perfil</a></li>
                         <li><hr class='dropdown-divider'></li>
-                        <li><a class='dropdown-item' href='".env('NAVBAR_LINK_MIPERFIL_CONFIG')."'>Configuración</a></li>
+                        <li><a class='dropdown-item' href='" . env('NAVBAR_LINK_MIPERFIL_CONFIG') . "'>Configuración</a></li>
                         <li><hr class='dropdown-divider'></li>
                         <li><a class='dropdown-item' href='http://nubezar.corp:8000/logout/'>Cerrar sesión</a></li>
                     </ul>
