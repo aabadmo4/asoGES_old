@@ -12,18 +12,18 @@ if (empty($data['id'])) {
 ?>
 
 @section("cabecera")
-<div class="titulos"><h1>CONSULTAR SOCIO</h1></div>
+<div class="titulos"><h1>SOCIOS</h1></div>
 @endsection
 
 @section("infoGeneral")
 <div class="contenido">
-
+    <div class="subtitulos"><h4>CONSULTAR SOCIO</h4></div>
     <table class="tablafoto">
         <tr>
             <td><img src="http://nubezar.corp/APIRest/img/avatar.png" alt="" width="30%" height="30%" /></td>
         </tr>
     </table>
-    <form>
+    <form >
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Nombre</label>

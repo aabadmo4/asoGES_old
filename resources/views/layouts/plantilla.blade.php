@@ -7,7 +7,7 @@
         <title>asoGES</title>
         <style>
             body{
-                background-image: url("https://nubezar.corp/APIRest/img/background.png");
+                background-image: url("/storage/background.png");
                 color: #636b6f;
             }
             .titulos{

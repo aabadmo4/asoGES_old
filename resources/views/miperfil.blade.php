@@ -9,6 +9,13 @@ if (empty($data['id'])) {
     echo "El id solicitado no corresponde a ningun socio";
     exit();
 }
+
+$url2 = 'http://nubezar.corp/APIRest/?opcion=getDocument&id=2';
+$data2 = json_decode(file_get_contents($url2), true);
+if (empty($data2['docname'])) {
+    echo "No se ha podido cargar el doc";
+    exit();
+}
 ?>
 @section("cabecera")
 <div class="titulos"><h1>MI PERFIL</h1></div>
@@ -17,7 +24,7 @@ if (empty($data['id'])) {
 
 @section("infoGeneral")
 <div class="contenido">
-    
+    <div class="subtitulos"><h4>MIS DATOS PERSONALES</h4></div>
     <table class="tablafoto">
         <tr>
             <td><img src="http://nubezar.corp/APIRest/img/avatar.png" alt="" width="30%" height="30%" /></td>
@@ -77,6 +84,15 @@ if (empty($data['id'])) {
         </div>
         <button type="submit" class="btn btn-primary">Sign in</button>
     </form>
+
+    <form method="POST" action="{{route('subir')}}" accept-charset="UTF-8" enctype="multipart/form-data">
+        {{ csrf_field() }}
+        <label for="archivo"><b>Archivo: </b></label><br>
+        <input type="file" name="archivo" required>
+        <input class="btn btn-success" type="submit" value="Enviar" >
+    </form>
+    <div class="subtitulos"><h4>MIS DOCUMENTOS</h4></div>
+    <embed src="/storage/docs/{{$_SESSION["logged_user"]}}/{{$data2["docname"]}}" type="application/pdf" width="100%" height="600px" />
 </div>
 @endsection
 

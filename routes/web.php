@@ -18,3 +18,4 @@ Route::get("/login","sessionController@loginPage");
 Route::get("/_login","sessionController@logado");
 Route::get("/noticias","miController@noticias");
 Route::get("/info","miController@info");
+Route::post('/subir','profileController@subirArchivo')->name('subir');

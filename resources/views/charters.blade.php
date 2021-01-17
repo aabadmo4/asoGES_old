@@ -1,5 +1,12 @@
 @extends("layouts.plantilla")
-
+<?php
+$url = 'http://nubezar.corp/APIRest/?opcion=getAllCharters';
+$charters = json_decode(file_get_contents($url), true);
+if (empty($charters[1]['id'])) {
+    echo "Err recuperar json";
+    exit();
+}
+?>
 @section("cabecera")
 <div class="titulos"><h1>ACTAS</h1></div>
 @endsection
@@ -9,8 +16,8 @@
 <div class="subtitulos"><h4>INFORMACIÓN SOBRE ACTAS</h4></div>
 
 <?php
-$url='http://nubezar.corp/APIRest/?opcion=getPartners';
-echo $dato=file_get_contents($url);
+echo $charters[1]['id'];
+echo $charters[1]['organo'];
 ?>
 <br>
 
@@ -24,16 +31,22 @@ echo $dato=file_get_contents($url);
     </tr>
   </thead>
   <tbody>
-    <?php $longitud = count($charters); ?>
-    @for($i=0; $i<$longitud; $i++){
+  
+
     <tr>
-        <th scope="row">{{$i}}</th>
-        <td>{{$charters[$i]}}</td>
-        <td>.</td>
+        <th scope="row">{{$charters[0]['id']}}</th>
+        <td>{{$charters[0]["organo"]}}</td>
+        <td>{{$charters[0]["organo"]}}</td>
+        <td>{{$charters[0]["fecha"]}}</td>
         <td>.</td>
     </tr>
-    @endfor
-    }
+    <tr>
+        <th scope="row">{{$charters[1]['id']}}</th>
+        <td>{{$charters[1]["organo"]}}</td>
+        <td>{{$charters[1]["organo"]}}</td>
+        <td>{{$charters[1]["fecha"]}}</td>
+        <td>.</td>
+    </tr>
   </tbody>
 </table>
 </div>

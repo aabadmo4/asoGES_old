@@ -9,7 +9,7 @@
         <style>
             html, body {
                 background-color: #aaa;
-                background-image: url("https://nubezar.corp/APIRest/img/background.png");
+                background-image: url("/storage/background.png");
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;

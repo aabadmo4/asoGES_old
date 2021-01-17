@@ -77,6 +77,7 @@ if (empty($data['not_read'])) {
                 <input class="form-control me-2" type="search" placeholder="Término a buscar" aria-label="Término a buscar" name="termino">
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
             </form>
+            
         </div>
     </div>
 </nav>
