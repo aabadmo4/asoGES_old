@@ -9,13 +9,6 @@ if (empty($data['id'])) {
     echo "El id solicitado no corresponde a ningun socio";
     exit();
 }
-
-$url2 = 'http://nubezar.corp/APIRest/?opcion=getDocument&id=2';
-$data2 = json_decode(file_get_contents($url2), true);
-if (empty($data2['docname'])) {
-    echo "No se ha podido cargar el doc";
-    exit();
-}
 ?>
 @section("cabecera")
 <div class="titulos"><h1>MI PERFIL</h1></div>
@@ -75,7 +68,6 @@ if (empty($data2['docname'])) {
         </div>
         <div class="form-group">
             <div class="form-check">
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
                 <input class="form-check-input" type="checkbox" id="gridCheck">
                 <label class="form-check-label" for="gridCheck">
                     Aceptación RGPD. (Anexar doc.)
@@ -92,7 +84,7 @@ if (empty($data2['docname'])) {
         <input class="btn btn-success" type="submit" value="Enviar" >
     </form>
     <div class="subtitulos"><h4>MIS DOCUMENTOS</h4></div>
-    <embed src="/storage/docs/{{$_SESSION["logged_user"]}}/{{$data2["docname"]}}" type="application/pdf" width="100%" height="600px" />
+    <embed src="/storage/docs/{{$_SESSION["logged_user"]}}/contrato_alta_socio.pdf" type="application/pdf" width="100%" height="600px" />
 </div>
 @endsection
 

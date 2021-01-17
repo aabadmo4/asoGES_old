@@ -38,7 +38,9 @@
             .footer{
                 opacity: .88;
             }
-
+            h5{
+                -webkit-text-stroke: 0.35px black;
+            }
         </style>
     </head>
     <body>

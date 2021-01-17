@@ -19,3 +19,7 @@ Route::get("/_login","sessionController@logado");
 Route::get("/noticias","miController@noticias");
 Route::get("/info","miController@info");
 Route::post('/subir','profileController@subirArchivo')->name('subir');
+Route::get("/documents/pdf_viewer","documentsController@pdf_viewer");
+
+Route::get('formulario', 'StorageController@index');
+Route::post('newdoc', 'StorageController@save');
