@@ -26,36 +26,36 @@ if (empty($data['id'])) {
     <form >
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputEmail4">Nombre</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value="{{$data['nombre']}}" readonly>
+                <label for="inputName">Nombre</label>
+                <input type="text" class="form-control" id="inputEmail" id="inputName" placeholder="Email" value="{{$data['nombre']}}" readonly>
             </div>
             <div class="form-group col-md-6">
-                <label for="inputPassword4">Apellidos</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Password" value="{{$data['apellidos']}}" readonly>
+                <label for="inputSurname">Apellidos</label>
+                <input type="text" class="form-control" id="inputSurname" name ="inputSurname" placeholder="Password" value="{{$data['apellidos']}}" readonly>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email" value="{{$data['email']}}" readonly>
+                <label for="inputEmail">Email</label>
+                <input type="email" class="form-control" id="inputEmail"  name="inputEmail" placeholder="Email" value="{{$data['email']}}" readonly>
             </div>
             <div class="form-group col-md-6">
-                <label for="inputPassword4">Usuario</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Password" value="{{$data['email']}}" readonly>
+                <label for="inputUser">Usuario</label>
+                <input type="text" class="form-control" id="inputUser" name="inputUser" placeholder="Password" value="{{$data['email']}}" readonly>
             </div>
         </div>
         <div class="form-group">
-            <label for="inputAddress2">Dirección</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" value="{{$data['direccion']}}" readonly>
+            <label for="inputAddress">Dirección</label>
+            <input type="text" class="form-control" id="inputAddress" name="inputAddress" placeholder="Apartment, studio, or floor" value="{{$data['direccion']}}" readonly>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputCity">Municipio</label>
-                <input type="text" class="form-control" id="inputCity" readonly>
+                <input type="text" class="form-control" id="inputCity" name="inputCity" readonly>
             </div>
             <div class="form-group col-md-4">
                 <label for="inputState">Provincia</label>
-                <select id="inputState" class="form-control" readonly>
+                <select id="inputState" name="inputState" class="form-control" readonly>
                     <option selected>Elegir...</option>
                     <option>A Coruña</option>
                     <option>Álava</option>
@@ -63,7 +63,7 @@ if (empty($data['id'])) {
             </div>
             <div class="form-group col-md-2">
                 <label for="inputZip">CP</label>
-                <input type="text" class="form-control" id="inputZip" value="{{$data["cp"]}}"readonly>
+                <input type="text" class="form-control" id="inputZip" name="inputZip" value="{{$data["cp"]}}"readonly>
             </div>
         </div>
         <div class="form-group">
