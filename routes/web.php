@@ -23,3 +23,4 @@ Route::get("/documents/pdf_viewer","documentsController@pdf_viewer");
 
 Route::get('formulario', 'StorageController@index');
 Route::post('newdoc', 'StorageController@save');
+Route::get('primaryOrders', 'primaryOrdersController@getOrders');

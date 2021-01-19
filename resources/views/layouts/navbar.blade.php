@@ -42,6 +42,14 @@ if (empty($data['not_read'])) {
                         <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_ACTAS')}}">Registro</a></li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Órdenes
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{env('ASOGES_URL')}}primaryOrders">Primary orders</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{env('NAVBAR_LINK_NOTICIAS')}}">Noticias</a>
                 </li>
