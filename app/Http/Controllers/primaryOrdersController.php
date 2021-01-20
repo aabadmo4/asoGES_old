@@ -10,4 +10,8 @@ class primaryOrdersController extends Controller
         session_start();
         return view("primary_orders");
     }
+    public function getOrderInfoById(Request $id) {
+        session_start();
+        return view("primary_orders_info");
+    }
 }

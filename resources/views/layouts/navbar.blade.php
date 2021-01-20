@@ -1,8 +1,8 @@
 <?php
-$url = 'http://nubezar.corp/APIRest/?opcion=getNotificationsNotRead&user_id=1';
+$url = 'http://nubezar.corp/APIRest/_Notifications/?opcion=getNotificationsNotRead&user_id=1';
 $data = json_decode(file_get_contents($url), true);
 if (empty($data['not_read'])) {
-    echo "err notread";
+    echo "Error al recuperar notif no leidas";
     exit();
 } else {
     $_SESSION["notif_sin_leer"] = $data['not_read'];
