@@ -8,6 +8,7 @@ $arreglo = json_decode($json, "false");
 @endsection
 
 @section("infoGeneral")
+
 <div class="contenido">
     <div class="subtitulos"><h4>INFORMACIÓN OTS</h4></div>
 
@@ -22,18 +23,30 @@ $arreglo = json_decode($json, "false");
                 <th scope="col">Estado</th>
                 <th scope="col">Propietario</th>
                 <th scope="col">Fecha</th>
+                <th scope="col1"></th>
             </tr>
         </thead>
         <tbody>
             <?php
+            $modal_bot = '';
+            ?>
+            <!-- Modal -->
+
+            <?php
             foreach ($arreglo as $post) {
-                echo "<tr><td>" . $post['id'] . "</td><td>" . $post['type_name'] . "</td><td>" . $post['subtype_name'] . "</td><td>" . $post['status_name'] . "</td><td>" . $post['owner'] . "</td><td>" . $post['date'] . "</td></tr>";
+                echo "<tr><td>" . $post['id'] . "</td><td>" . $post['type_name'] . "</td><td>" . $post['subtype_name'] . "</td><td><a href='#' data-toggle='tooltip' data-placement='top' title='Obtendiendo información sobre las órdenes hijas.'>" . $post['status_name'] . "</a></td><td>" . $post['owner'] . "</td><td>" . $post['date'] . "</td>";
+                //echo "<td>" . $modal_bot . "</td>";
+                echo "</tr>";
             }
             echo "</tbody></table>";
             ?>
         </tbody>
     </table>
+    
 </div>
+<script>
+
+</script>
 @endsection
 
 @section("pie")
