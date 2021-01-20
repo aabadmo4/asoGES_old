@@ -34,7 +34,7 @@ $arreglo = json_decode($json, "false");
 
             <?php
             foreach ($arreglo as $post) {
-                echo "<tr><td>" . $post['id'] . "</td><td>" . $post['type_name'] . "</td><td>" . $post['subtype_name'] . "</td><td><a href='http://nubezar.corp:8000/primaryOrders/getOrderInfoById/".$post["id"]."' data-toggle='tooltip' data-placement='top' title='Obtendiendo información sobre las órdenes hijas.'>" . $post['status_name'] . "</a></td><td>" . $post['owner'] . "</td><td>" . $post['date'] . "</td>";
+                echo "<tr><td>" . $post['id'] . "</td><td>" . $post['type_name'] . "</td><td>".$post["subtype_name"]."</td><td>" . $post['status_name'] . "</td><td><a href='/a' data-toggle='tooltip' data-placement='top' title='Hacer click para ampliar la información del usuario.'>" . $post['owner'] . "</a></td><td>" . $post['date'] . "</td>";
                 //echo "<td>" . $modal_bot . "</td>";
                 echo "</tr>";
             }

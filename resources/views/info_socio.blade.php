@@ -4,7 +4,7 @@ consumiendo webservive apirest nubezar http://nubezar.corp/APIRest/index1?opcion
 @extends("layouts.plantilla")
 
 <?php
-$data = json_decode(file_get_contents('http://nubezar.corp/APIRest/?opcion=getPartner&id=' . $_GET["id"]), true);
+$data = json_decode(file_get_contents('http://nubezar.corp/APIRest/_Partners?opcion=getPartner&id=' . $_GET["id"]), true);
 if (empty($data['id'])) {
     echo "El id solicitado no corresponde a ningun usuario";
     exit();
@@ -75,8 +75,26 @@ if (empty($data['id'])) {
                 </label>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" class="btn btn-primary">Guardar cambios</button>
     </form>
+    <hr style="border:15px; border-color:grey;">
+    <div class="user_stadistics">
+        <div class="subtitulos"><h5>PARTNER STADISTICS</h5></div>
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">KPI</th>
+                    <th scope="col">Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Documentos:</th>
+                    <td>[Sin información]</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 @endsection
 

@@ -76,7 +76,32 @@ if (empty($data['id'])) {
         </div>
         <button type="submit" class="btn btn-primary">Sign in</button>
     </form>
-
+     <hr style="border:15px; border-color:grey;">
+    <div class="user_stadistics">
+        <div class="subtitulos"><h5>USER STADISTICS</h5></div>
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">KPI</th>
+                    <th scope="col">Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Total de órdenes:</th>
+                    <td>[Sin información]</td>
+                </tr>
+                <tr>
+                    <th scope="row">Órdenes abiertas:</th>
+                    <td>[Sin información]</td>
+                </tr>
+                <tr>
+                    <th scope="row">Documentos:</th>
+                    <td>[Sin información]</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <form method="POST" action="{{route('subir')}}" accept-charset="UTF-8" enctype="multipart/form-data">
         {{ csrf_field() }}
         <label for="archivo"><b>Archivo: </b></label><br>

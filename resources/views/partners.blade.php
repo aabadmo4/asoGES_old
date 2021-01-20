@@ -17,6 +17,7 @@ $arreglo = json_decode($json, "false");
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellidos</th>
                 <th scope="col">Email</th>
+                <th scope="col">CP</th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -27,9 +28,10 @@ $arreglo = json_decode($json, "false");
                 <td>{{$post['name']}}</td>
                 <td>{{$post['surname']}}</td>
                 <td>{{$post['email']}}</td>
-                <td><a href="http://nubezar.corp:8000/socios/info_socio?id={{$post['id']}}" class="btn btn-success">Ver</a>
-                    <a href="#" class="btn btn-warning">Editar</a>
-                    <a href="#" class="btn btn-danger">Borrar</a>
+                <td>{{$post['cp']}}</td>
+                <td><a href="http://nubezar.corp:8000/partners/info_socio?id={{$post['id']}}" class="btn btn-success">X</a>
+                    <a href="#" class="btn btn-warning">X</a>
+                    <a href="#" class="btn btn-danger">X</a>
                 </td>
             </tr>
             @endforeach
