@@ -12,11 +12,11 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Nombre</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                <input type="email" class="form-control" id="inputEmail4" placeholder="nombre">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputPassword4">Apellidos</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                <label for="inputSurname">Apellidos</label>
+                <input type="text" class="form-control" id="inputSurname" placeholder="Apellidos">
             </div>
         </div>
         <div class="form-row">
@@ -25,8 +25,8 @@
                 <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputPassword4">Usuario</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                <label for="inputPassword4">Usuario*</label>
+                <input type="text" class="form-control" id="inputPassword4" placeholder="Usuario">
             </div>
         </div>
         <div class="form-group">
@@ -36,7 +36,7 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputCity">Municipio</label>
-                <input type="text" class="form-control" id="inputCity">
+                <input type="text" class="form-control" id="inputCity" placeholder="Municipio">
             </div>
             <div class="form-group col-md-4">
                 <label for="inputState">Provincia</label>

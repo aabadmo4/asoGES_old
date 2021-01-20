@@ -49,7 +49,7 @@ $data = json_decode($json, "false");
     <script>
         $('#tree').tree({
             dataSource: [{
-                    text: 'Gestion usuarios: Creación:  <img src="http://nubezar.corp/APIRest/img/succes.png" alt="" width="15px" height="15px" /> ',
+                    text: 'Gestion usuarios: Creación:  <img src="http://nubezar.corp/APIRest/img/alert.png" alt="" width="20px" height="15px" /> ',
                     children: [{
                             text: 'Enviar notificacion a admin y validar órden:<img src="http://nubezar.corp/APIRest/img/alert.png" alt="" width="20px" height="15px" />',
                             children: [
