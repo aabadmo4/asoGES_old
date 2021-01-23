@@ -1,6 +1,6 @@
 @extends("layouts.plantilla")
 <?php
-$url = 'http://nubezar.corp/APIRest/?opcion=getAllCharters';
+$url = 'http://nubezar.corp/APIRest/_Charters/?opcion=getAllCharters';
 $charters = json_decode(file_get_contents($url), true);
 if (empty($charters[1]['id'])) {
     echo "Err recuperar json";

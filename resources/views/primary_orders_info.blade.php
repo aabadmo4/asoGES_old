@@ -1,6 +1,6 @@
 @extends("layouts.treeView_template")
 <?php
-$json = file_get_contents("http://nubezar.corp/APIRest/_Orders/?primary_order=getOrderById&id=5");
+$json = file_get_contents("http://nubezar.corp/APIRest/_Orders/?primary_order=getOrderById&id=".$_GET["id"]);
 $data = json_decode($json, "false");
 ?>
 @section("cabecera")
@@ -10,7 +10,7 @@ $data = json_decode($json, "false");
 @section("infoGeneral")
 
 <div class="contenido">
-    <div class="subtitulos"><h4>INFORMACIÓN SOBRE LA ORDEN #5</h4></div>
+    <div class="subtitulos"><h4>INFORMACIÓN SOBRE LA ORDEN #{{$_GET["id"]}}</h4></div>
 
     <br>
 
@@ -28,7 +28,7 @@ $data = json_decode($json, "false");
         </thead>
         <tbody>
             <tr>
-                <td>{{$data["id"]}}</td>
+                <td>{{$_GET["id"]}}</td>
                 <td>{{$data["type_name"]}}</td>
                 <td>{{$data["subtype_name"]}}</td>
                 <td>{{$data["status_name"]}}</td>
