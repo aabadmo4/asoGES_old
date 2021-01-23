@@ -1,8 +1,4 @@
 @extends("layouts.treeView_template")
-<?php
-$json = file_get_contents("http://nubezar.corp/APIRest/_Orders/?primary_order=getOrderById&id=".$_GET["id"]);
-$data = json_decode($json, "false");
-?>
 @section("cabecera")
 <div class="titulos"><h1>ORDENES PRIMARIAS</h1></div>
 @endsection

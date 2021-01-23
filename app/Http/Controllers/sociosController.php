@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 class sociosController extends Controller {
 
     public function index() {
@@ -11,7 +9,9 @@ class sociosController extends Controller {
     public function partners() {
         session_start();
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
-            return view("partners");
+            $json = file_get_contents("http://nubezar.corp/APIRest/_Partners/?opcion=getPartners");
+            $arreglo = json_decode($json, "false");
+            return view('partners')->with('arreglo', $arreglo);
         } else {
             return view("login", compact("redirect"));
         }
@@ -41,7 +41,12 @@ class sociosController extends Controller {
     public function info_socio() {
         session_start();
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
-            return view("info_socio");
+            $data = json_decode(file_get_contents('http://nubezar.corp/APIRest/_Partners?opcion=getPartner&id=' . $_GET["id"]), true);
+            if (empty($data['id'])) {
+                echo "El id solicitado no corresponde a ningun usuario";
+                exit();
+            }
+            return view('info_socio')->with('data', $data);
         } else {
             $err = "error002";
             return view("welcome", compact("err"));

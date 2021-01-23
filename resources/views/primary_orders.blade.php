@@ -1,8 +1,4 @@
 @extends("layouts.plantilla")
-<?php
-$json = file_get_contents("http://nubezar.corp/APIRest/_orders/?primary_order=getOrders");
-$arreglo = json_decode($json, "false");
-?>
 @section("cabecera")
 <div class="titulos"><h1>ORDENES PRIMARIAS</h1></div>
 @endsection

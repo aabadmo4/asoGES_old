@@ -1,16 +1,4 @@
-<!-- 
-consumiendo webservive apirest nubezar http://nubezar.corp/APIRest/index1?opcion=
--->
 @extends("layouts.plantilla")
-
-<?php
-$data = json_decode(file_get_contents('http://nubezar.corp/APIRest/_Partners?opcion=getPartner&id=' . $_GET["id"]), true);
-if (empty($data['id'])) {
-    echo "El id solicitado no corresponde a ningun usuario";
-    exit();
-}
-?>
-
 @section("cabecera")
 <div class="titulos"><h1>SOCIOS</h1></div>
 @endsection
@@ -90,6 +78,10 @@ if (empty($data['id'])) {
             <tbody>
                 <tr>
                     <th scope="row">Documentos:</th>
+                    <td>[Sin información]</td>
+                </tr>
+                <tr>
+                    <th scope="row">Notificaciones:</th>
                     <td>[Sin información]</td>
                 </tr>
             </tbody>
