@@ -1,11 +1,22 @@
 <?php
 $url = 'http://nubezar.corp/APIRest/_Notifications/?opcion=getNotificationsNotRead&user_id=1';
 $data = json_decode(file_get_contents($url), true);
-if (empty($data['not_read'])) {
-    echo "Error al recuperar notif no leidas";
-    exit();
-} else {
+if (!empty($data['not_read'])) {
     $_SESSION["notif_sin_leer"] = $data['not_read'];
+} else {
+    $_SESSION["notif_sin_leer"] = "err";
+}
+
+$url_partners = 'http://nubezar.corp/APIRest/_Charters/?opcion=countCharters';
+$data_partners = json_decode(file_get_contents($url_partners), true);
+if (empty($data_partners['charters'])) {
+    $data_partners['charters'] = "err";
+}
+
+$url_charters = 'http://nubezar.corp/APIRest/_Charters/?opcion=countCharters';
+$data_charters = json_decode(file_get_contents($url_charters), true);
+if (empty($data_charters['charters'])) {
+    $data_charters['charters'] = "err";
 }
 ?>
 
@@ -28,7 +39,7 @@ if (empty($data['not_read'])) {
                         <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_SOCIOS_CREATE')}}">Crear</a></li>
                         <li><a class="dropdown-item" href="#">Borrar</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_PARTNERS')}}">Consultar socios</a></li>
+                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_PARTNERS')}}">Consultar socios<kbd></kbd></a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -39,7 +50,7 @@ if (empty($data['not_read'])) {
                         <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_CHARTERS')}}/create">Crear</a></li>
                         <li><a class="dropdown-item" href="#">Borrar</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_ACTAS')}}">Registro</a></li>
+                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_ACTAS')}}">Registro<kbd>{{$data_charters["charters"]}}</kbd></a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
