@@ -3,6 +3,7 @@ namespace App\Models;
 
 class Sessions{
     public static function authUser($txtuser){
+        session_start();
         $_SESSION["logged_user"] = $txtuser;
         $_SESSION["logged_user_id"] = 1;
         $_COOKIE["session"] = true;

@@ -14,17 +14,15 @@ class sessionController extends Controller {
         }
     }
 
-    public function logado() {
-        session_start();
-        $data= Models\Sessions::authUser($_GET["txtuser"]);
-        //$logged = 1;
+    public function logado() { 
+        Models\Sessions::authUser($_GET["txtuser"]);
         return view("logado");
     }
 
     public function logout() {
         session_start();
         session_destroy();
-        session_start();
+        //session_start();
         return view("welcome");
     }
 
