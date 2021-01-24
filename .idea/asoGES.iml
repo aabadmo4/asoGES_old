@@ -108,6 +108,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/environment" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/css-selector" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dompdf/dompdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/barryvdh/laravel-dompdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phenx/php-svg-lib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

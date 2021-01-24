@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2e41287-aa8d-4d07-ad57-5aef9ebf94a4" name="Default Changelist" comment=".">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/asoGES.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/asoGES.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/socios.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/socios.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/sociosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/sociosController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,10 +124,15 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
       <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
     </include_path>
   </component>
   <component name="ProjectId" id="1n6LtTtUOyPXcHwiIrCgYIMZ8tM" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -154,6 +162,7 @@
       <updated>1610705807950</updated>
       <workItem from="1610705818111" duration="1618000" />
       <workItem from="1610728311488" duration="308000" />
+      <workItem from="1611447163314" duration="782000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1610707140828</created>
