@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2e41287-aa8d-4d07-ad57-5aef9ebf94a4" name="Default Changelist" comment=".">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/asoGES.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/asoGES.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Charters.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/PrimaryOrders.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StorageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StorageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/chartersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/chartersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/primaryOrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/primaryOrdersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/sociosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/sociosController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,10 +144,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Models" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\www\asoGES\app\Models" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -162,7 +170,7 @@
       <updated>1610705807950</updated>
       <workItem from="1610705818111" duration="1618000" />
       <workItem from="1610728311488" duration="308000" />
-      <workItem from="1611447163314" duration="782000" />
+      <workItem from="1611447163314" duration="1626000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1610707140828</created>
@@ -171,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610707140828</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary=".">
+      <created>1611448047513</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1611448047513</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

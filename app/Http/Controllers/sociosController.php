@@ -10,7 +10,7 @@ class sociosController extends Controller {
     public function partners() {
         session_start();
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
-            $arreglo=Models\Users_model::getPartners();
+            $arreglo=Models\Partners::getPartners();
             return view('partners')->with('arreglo', $arreglo);
         } else {
             return view("login", compact("redirect"));
@@ -31,7 +31,7 @@ class sociosController extends Controller {
     public function info_socio() {
         session_start();
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
-            $data=Models\Users_model::getPartnerById($_GET["id"]);
+            $data=Models\Partners::getPartnerById($_GET["id"]);
             return view('info_socio')->with('data', $data);
         } else {
             $err = "error002";

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class StorageController extends Controller {
 
     public function index() {
-        return \View::make('new');
+        return view("new");
     }
 
     public function save(Request $request) {
@@ -20,9 +20,9 @@ class StorageController extends Controller {
 
         $url = 'http://nubezar.corp/APIRest/?opcion=newDocument&name=ej&namedocu='.$nombre.'?'.$user_id=1;
         //file_get_contents($url);
-        
+
         //indicamos que queremos guardar un nuevo archivo en el disco local
-        \Storage::disk('local')->put($nombre, \File::get($file));
+        Storage::disk('local')->put($nombre, \File::get($file));
 
         return "archivo guardado";
     }
