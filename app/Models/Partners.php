@@ -1,8 +1,7 @@
 <?php
 namespace App\Models;
 class Partners{
-    public static function getPartners()
-    {
+    public static function getPartners(){
         $json = file_get_contents("http://nubezar.corp/APIRest/_Partners/?opcion=getPartners");
         return json_decode($json, "false");
     }
