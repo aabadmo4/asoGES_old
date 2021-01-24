@@ -1,8 +1,7 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Models;
 
 class sessionController extends Controller {
 
@@ -17,21 +16,9 @@ class sessionController extends Controller {
 
     public function logado() {
         session_start();
-        $_SESSION["logged_user"] = $_GET["txtuser"];
-        $_SESSION["logged_user_id"] = 1;
-        $_COOKIE["session"] = true;
-        file_get_contents('https://nubezar.es/connect/not', true);
-
-        
-        $url = 'http://nubezar.corp/APIRest/?opcion=addSession&user_id=' . $_SESSION["logged_user_id"] . '&user_ip=' . $_SERVER['REMOTE_ADDR'] . '&idsession=' . session_id();
-        $data = json_decode(file_get_contents($url), true);
-        if (empty($data['id'])) {
-            echo "err notread";
-            exit();
-        } else {
-            $logged = 1;
-            return view("logado");
-        }
+        $data= Models\Sessions::authUser($_GET["txtuser"]);
+        //$logged = 1;
+        return view("logado");
     }
 
     public function logout() {
