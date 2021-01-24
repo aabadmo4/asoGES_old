@@ -2,7 +2,6 @@
 namespace App\Http\Controllers;
 use App\Models;
 class chartersController extends Controller {
-
     public function charters() {
         session_start();
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
@@ -22,5 +21,4 @@ class chartersController extends Controller {
         session_start();
         return view("createCharter");
     }
-
 }
