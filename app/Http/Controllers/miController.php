@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 class miController extends Controller {
 
     public function index() {
+        session_start();
         return view("welcome");
     }
 
