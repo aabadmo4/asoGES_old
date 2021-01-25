@@ -3,9 +3,9 @@ use App\Models;
 
 $data= Models\Notifications::countNotificationsNotRead();
 if (!empty($data['not_read'])) {
-    $_SESSION["notif_sin_leer"] = $data['not_read'];
+    $data_notif["not_read"] = $data['not_read'];
 } else {
-    $_SESSION["notif_sin_leer"] = "err";
+    $data_notif["not_read"] = "err";
 }
 
 $data_partners= Models\Charters::countCharters();
@@ -67,31 +67,28 @@ $data_docs= Models\Charters::countCharters();
                     <a class="nav-link" aria-current="page" href="{{env('NAVBAR_LINK_NOTICIAS')}}">Noticias</a>
                 </li>
                 <li class="nav-item">
-                    <?php
-                    if (isset($_SESSION["logged_user"]) && !empty($_SESSION["logged_user"])) {
-                        echo "
+
+                    @if (isset($_SESSION["logged_user"]) && !empty($_SESSION["logged_user"])) 
                         <li class='nav-item dropdown'>
                     <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
                         Mi Perfil
                     </a>
                     <ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
-                        <li><a class='dropdown-item' href='" . env('NAVBAR_LINK_MIPERFIL') . "'>Editar perfil</a></li>
+                        <li><a class='dropdown-item' href='{{env('NAVBAR_LINK_MIPERFIL')}}'>Editar perfil</a></li>
                         <li><hr class='dropdown-divider'></li>
-                        <li><a class='dropdown-item' href='" . env('NAVBAR_LINK_MIPERFIL_CONFIG') . "'>Configuración</a></li>
+                    <li><a class='dropdown-item' href='{{env('NAVBAR_LINK_MIPERFIL_CONFIG')}}'>Configuración</a></li>
                         <li><hr class='dropdown-divider'></li>
                         <li><a class='dropdown-item' href='http://nubezar.corp:8000/logout/'>Cerrar sesión</a></li>
                     </ul>
                 </li>
-                        ";
-                    } else {
-                        echo "<a class='nav-link disabled' href='#' tabindex='-1' aria-disabled='true'>Mi Perfil</a>";
-                    }
-                    ?>         
+                    @else 
+                        <a class='nav-link disabled' href='#' tabindex='-1' aria-disabled='true'>Mi Perfil</a>
+                    @endif        
                 </li>
             </ul>
             <label><b>{{env('ORGANIZACION_CLIENTE')}}</b></label>
             <button type="button" class="btn btn-primary">
-                @ {{$_SESSION["logged_user"]}} <a href="{{env('NAVBAR_LINK_MIPERFIL')}}"><span class="badge bg-secondary">{{$_SESSION["notif_sin_leer"]}}</span></a>
+                @ {{$_SESSION["logged_user"]}} <a href="{{env('NAVBAR_LINK_MIPERFIL')}}"><span class="badge bg-secondary">{{$data_notif["not_read"]}}</span></a>
                 <span class="visually-hidden"></span>
             </button>
             <form class="d-flex" action="http://nubezar.corp:8000/buscar" method="get">

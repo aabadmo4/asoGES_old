@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -123,11 +122,10 @@
                     <a href="{{env('NAVBAR_LINK_ACTAS')}}">Actas</a>
                     <a href="{{env('NAVBAR_LINK_NOTICIAS')}}">Noticias</a>
                     <a href="{{env('NAVBAR_LINK_CONTACTO')}}">Contacto</a>
+
+                    <a href="{{env('NAVBAR_LINK_LOGOUT')}}">Cerrar sesión</a>
                     
-                        <a href="{{env('NAVBAR_LINK_LOGOUT')}}">Cerrar sesión</a>
-                    
-                        <a href="{{env('NAVBAR_LINK_LOGIN')}}">Iniciar sesión</a>
-                    
+                    <a href="{{env('NAVBAR_LINK_LOGIN')}}">Iniciar sesión</a>     
                 </div>
             </div>
         </div>
