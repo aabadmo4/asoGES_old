@@ -14,7 +14,7 @@ class sessionController extends Controller {
     }
 
     public function logado() { 
-        Models\Sessions::authUser($_GET["txtuser"]);
+        
         return view("logado");
     }
 

@@ -25,3 +25,5 @@ Route::get('formulario', 'StorageController@index');
 Route::post('newdoc', 'StorageController@save');
 Route::get('primaryOrders', 'primaryOrdersController@getOrders');
 Route::get('primaryOrders/getOrderInfoById', 'primaryOrdersController@getOrderInfoById');
+
+Route::get("/users","usersController@users");
