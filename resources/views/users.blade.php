@@ -23,7 +23,7 @@
                 <td>{{$post['username']}}</td>
                 <td>{{$post['password']}}</td>
                 <td>{{$post['rol_id']}}</td>
-                <td><a href="http://nubezar.corp:8000/partners/info_socio?id={{$post['id']}}" class="btn btn-success">X</a>
+                <td><a href="http://nubezar.corp:8000/users/{{$post['id']}}" class="btn btn-success">X</a>
                     <a href="#" class="btn btn-warning">X</a>
                     <a href="#" class="btn btn-danger">X</a>
                 </td>

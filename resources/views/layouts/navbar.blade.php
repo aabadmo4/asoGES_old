@@ -1,23 +1,17 @@
 <?php
-$url = 'http://nubezar.corp/APIRest/_Notifications/?opcion=getNotificationsNotRead&user_id=1';
-$data = json_decode(file_get_contents($url), true);
+use App\Models;
+
+$data= Models\Notifications::countNotificationsNotRead();
 if (!empty($data['not_read'])) {
     $_SESSION["notif_sin_leer"] = $data['not_read'];
 } else {
     $_SESSION["notif_sin_leer"] = "err";
 }
 
-$url_partners = 'http://nubezar.corp/APIRest/_Charters/?opcion=countCharters';
-$data_partners = json_decode(file_get_contents($url_partners), true);
-if (empty($data_partners['charters'])) {
-    $data_partners['charters'] = "err";
-}
-
-$url_charters = 'http://nubezar.corp/APIRest/_Charters/?opcion=countCharters';
-$data_charters = json_decode(file_get_contents($url_charters), true);
-if (empty($data_charters['charters'])) {
-    $data_charters['charters'] = "err";
-}
+$data_partners= Models\Charters::countCharters();
+$data_charters= Models\Charters::countCharters();
+$data_orders= Models\Charters::countCharters();
+$data_docs= Models\Charters::countCharters();
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -37,9 +31,8 @@ if (empty($data_charters['charters'])) {
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_SOCIOS_CREATE')}}">Crear</a></li>
-                        <li><a class="dropdown-item" href="#">Borrar</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_PARTNERS')}}">Consultar socios<kbd></kbd></a></li>
+                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_PARTNERS')}}">Consultar socios<kbd>{{$data_partners["charters"]}}</kbd></a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -48,7 +41,6 @@ if (empty($data_charters['charters'])) {
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_CHARTERS')}}/create">Crear</a></li>
-                        <li><a class="dropdown-item" href="#">Borrar</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_ACTAS')}}">Registro<kbd>{{$data_charters["charters"]}}</kbd></a></li>
                     </ul>
@@ -58,7 +50,7 @@ if (empty($data_charters['charters'])) {
                         Órdenes
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{env('ASOGES_URL')}}primaryOrders">Primary orders</a></li>
+                        <li><a class="dropdown-item" href="{{env('ASOGES_URL')}}primaryOrders">Primary orders<kbd>{{$data_orders["charters"]}}</kbd></a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -68,7 +60,7 @@ if (empty($data_charters['charters'])) {
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_CHARTERS')}}/create">Subir</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_ACTAS')}}">Registro</a></li>
+                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_ACTAS')}}">Registro<kbd>{{$data_docs["charters"]}}</kbd></a></li>
                     </ul>
                 </li>
                 <li class="nav-item">

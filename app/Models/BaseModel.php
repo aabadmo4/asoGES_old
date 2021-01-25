@@ -6,8 +6,11 @@ class BaseModel {
     public static function getAll() {
         $json = file_get_contents("http://nubezar.corp/APIRest/_".self::$resource."/?opcion=get".self::$resource);
         if($json==false){
-            echo "Error al conectar con el servicio de Ususarios.";
+            echo "Error al conectar con el servicio de ".self::$resource.".";
         }
         return json_decode($json, "false");
     }
+    
+
+
 }
