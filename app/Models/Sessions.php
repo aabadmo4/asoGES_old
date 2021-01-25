@@ -2,18 +2,20 @@
 namespace App\Models;
 
 class Sessions{
-    /*public static function authUser($txtuser){
-        session_start();
-        $_SESSION["logged_user"] = $txtuser;
-        $_SESSION["logged_user_id"] = 1;
-        $_COOKIE["session"] = true;
-        $url = 'http://nubezar.corp/APIRest/?opcion=addSession&user_id=' . $_SESSION["logged_user_id"] . '&user_ip=' . $_SERVER['REMOTE_ADDR'] . '&idsession=' . session_id();
+    public static function authUser($txtuser,$txtpassword){
+        $url = "http://nubezar.corp/APIRest/_Auth/?opcion=authUser&txtuser=$txtuser&txtpassword=$txtpassword";
         $data = json_decode(file_get_contents($url), true);
         if($data==false){
             echo "ERROR AL CONECTAR CON SERVICIO AUTH";
             exit();
         }else{
-            return $data;
+            if($data["authenticate_status"]=="ok"){
+                return $data;
+            }else{
+                echo "credential error";
+                exit();
+            }
+            
         }
-    }*/
+    }
 }

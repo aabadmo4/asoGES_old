@@ -11,8 +11,9 @@ class sessionController extends Controller {
 
     public function logado() { 
         session_start();
-        $_SESSION["logged_user"]="adanabad";
-        $_SESSION["logged_user_id"]="1";
+        $user_id=Models\Sessions::authUser($_GET["txtuser"], $_GET["txtpassword"]);
+        $_SESSION["logged_user"]=$_GET["txtuser"];
+        $_SESSION["logged_user_id"]=$user_id["logged_user_id"];
         return view("logado");
     }
 
