@@ -27,3 +27,5 @@ Route::get('primaryOrders', 'primaryOrdersController@getOrders');
 Route::get('primaryOrders/getOrderInfoById', 'primaryOrdersController@getOrderInfoById');
 
 Route::get("/users","usersController@users");
+Route::get("/users/create","usersController@createPage");
+Route::get("/users/createuser","usersController@createuser");

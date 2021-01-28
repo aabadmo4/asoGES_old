@@ -9,4 +9,13 @@ class usersController extends Controller
         return view('users')->with('data', $arreglo);
         
     }
+    public function createPage() {
+        session_start();
+        return view('create_user')->with('data', "0");
+    }
+    public function createuser() {
+        session_start();
+        file_get_contents("http://nubezar.corp/APIRest/_Users/?opcion=createUser&username=".$_GET["txtusername"]."&password=".$_GET["txtpassword"]);
+        return view('create_user')->with('data', "user created");
+    }
 }
