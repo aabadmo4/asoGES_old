@@ -1,30 +1,10 @@
 <?php
 use App\Models;
-
-$data= Models\Notifications::countNotificationsNotRead();
-if (!empty($data['not_read'])) {
-    $data_notif["not_read"] = $data['not_read'];
-} else {
-    $data_notif["not_read"] = "err";
-}
-
-$data_partners= Models\Charters::countCharters();
 $data_charters= Models\Charters::countCharters();
-$data_orders= Models\Charters::countCharters();
 $data_docs= Models\Charters::countCharters();
 ?>
 <script language="javascript" src="js/jquery-1.2.6.min.js"></script>
-<script language="javascript">
-function recargar(){   
-       /// Aqui podemos enviarle alguna variable a nuestro script PHP
-    var user_id={{$_SESSION["logged_user_id"]}};
-       /// Invocamos a nuestro script PHP
-    $.post("miscript", { variable: variable_post }, function(data){
-       /// Ponemos la respuesta de nuestro script en el DIV recargado
-    $("#recargado").html(data);
-    });        
-}
-</script>
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -44,7 +24,7 @@ function recargar(){
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_SOCIOS_CREATE')}}">Crear</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_PARTNERS')}}">Consultar socios<kbd>{{$data_partners["charters"]}}</kbd></a></li>
+                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_PARTNERS')}}">Consultar socios<kbd id="countpartners"></kbd></a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -62,7 +42,7 @@ function recargar(){
                         Órdenes
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{env('ASOGES_URL')}}primaryOrders">Primary orders<kbd>{{$data_orders["charters"]}}</kbd></a></li>
+                        <li><a class="dropdown-item" href="{{env('ASOGES_URL')}}primaryOrders">Primary orders<kbd id="countorders"></kbd></a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -107,22 +87,44 @@ function recargar(){
                 <input class="form-control me-2" type="search" placeholder="Término a buscar" aria-label="Término a buscar" name="termino">
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
             </form>
-
         </div>
     </div>
 </nav>
 <script>
-            var id = '<?php echo $_SESSION["logged_user_id"]; ?>';
-            var one="http://nubezar.corp/APIRest/notif3.php?user_id=";
-            var joined = one + id ;
+    var id = '<?php echo $_SESSION["logged_user_id"]; ?>';
+    var one="http://nubezar.corp/APIRest/notif3.php?user_id=";
+    var joined = one + id ;
         
-             $.ajax({
+    $.ajax({
         url     : joined,
         type    : "get",
         data    : "send",
         success : (function (data) {
                       console.log(data);
                       $('#recargado').append(data);
-                  })
+        })
     });
-        </script>
+</script>
+        
+<script>
+    $.ajax({
+        url     : "http://nubezar.corp/APIRest/count_orders",
+        type    : "get",
+        data    : "send",
+        success : (function (data) {
+            console.log(data);
+            $('#countorders').append(data);
+        })
+    });
+</script>
+<script>
+    $.ajax({
+        url     : "http://nubezar.corp/APIRest/count_partners",
+        type    : "get",
+        data    : "send",
+        success : (function (data) {
+            console.log(data);
+            $('#countpartners').append(data);
+        })
+    });
+</script>

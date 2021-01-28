@@ -6,10 +6,10 @@
 
 @section("infoGeneral")
 <div class="contenido">
-    <div class="subtitulos"><h4>MIS DATOS PERSONALES</h4></div>
+    <div class="subtitulos"><h4>MIS DATOS PERSONALES <a href="http://nubezar.corp/asogesAPI/pdfGenerate/?partner_id={{$_SESSION["logged_user_id"]}}">Print</a></h4></div>
     <table class="tablafoto">
         <tr>
-            <td><img src="http://nubezar.corp/APIRest/img/avatar.png" alt="" width="30%" height="30%" /></td>
+            <td></td>
         </tr>
     </table>
     <form >
