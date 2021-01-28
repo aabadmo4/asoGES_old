@@ -16,6 +16,7 @@ class usersController extends Controller
     public function createuser() {
         session_start();
         file_get_contents("http://nubezar.corp/APIRest/_Users/?opcion=createUser&username=".$_GET["txtusername"]."&password=".$_GET["txtpassword"]);
+        sleep("3");
         return view('create_user')->with('data', "user created");
     }
 }

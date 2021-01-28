@@ -13,6 +13,18 @@ $data_charters= Models\Charters::countCharters();
 $data_orders= Models\Charters::countCharters();
 $data_docs= Models\Charters::countCharters();
 ?>
+<script language="javascript" src="js/jquery-1.2.6.min.js"></script>
+<script language="javascript">
+function recargar(){   
+       /// Aqui podemos enviarle alguna variable a nuestro script PHP
+    var user_id={{$_SESSION["logged_user_id"]}};
+       /// Invocamos a nuestro script PHP
+    $.post("miscript", { variable: variable_post }, function(data){
+       /// Ponemos la respuesta de nuestro script en el DIV recargado
+    $("#recargado").html(data);
+    });        
+}
+</script>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -88,7 +100,7 @@ $data_docs= Models\Charters::countCharters();
             </ul>
             <label><b>{{env('ORGANIZACION_CLIENTE')}}</b></label>
             <button type="button" class="btn btn-primary">
-                @ {{$_SESSION["logged_user"]}} <a href="{{env('NAVBAR_LINK_MIPERFIL')}}"><span class="badge bg-secondary">{{$data_notif["not_read"]}}</span></a>
+                @ {{$_SESSION["logged_user"]}} <a href="#" onclick="javascript:recargar();"><span class="badge bg-secondary"><div id="recargado">{{$data_notif["not_read"]}}</div></span></a>
                 <span class="visually-hidden"></span>
             </button>
             <form class="d-flex" action="http://nubezar.corp:8000/buscar" method="get">

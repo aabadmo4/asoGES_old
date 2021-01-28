@@ -29,3 +29,8 @@ Route::get('primaryOrders/getOrderInfoById', 'primaryOrdersController@getOrderIn
 Route::get("/users","usersController@users");
 Route::get("/users/create","usersController@createPage");
 Route::get("/users/createuser","usersController@createuser");
+
+
+Route::get("/config","pagesController@configPage");
+
+Route::get("/miscript","notifnotread@configPage");
