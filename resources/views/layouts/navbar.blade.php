@@ -100,7 +100,7 @@ function recargar(){
             </ul>
             <label><b>{{env('ORGANIZACION_CLIENTE')}}</b></label>
             <button type="button" class="btn btn-primary">
-                @ {{$_SESSION["logged_user"]}} <a href="#" onclick="javascript:recargar();"><span class="badge bg-secondary"><div id="recargado">{{$data_notif["not_read"]}}</div></span></a>
+                @ {{$_SESSION["logged_user"]}} <a href="#" onclick="javascript:recargar();"><span class="badge bg-secondary"><div id="recargado"></div></span></a>
                 <span class="visually-hidden"></span>
             </button>
             <form class="d-flex" action="http://nubezar.corp:8000/buscar" method="get">
@@ -111,4 +111,18 @@ function recargar(){
         </div>
     </div>
 </nav>
-
+<script>
+            var id = '<?php echo $_SESSION["logged_user_id"]; ?>';
+            var one="http://nubezar.corp/APIRest/notif3.php?user_id=";
+            var joined = one + id ;
+        
+             $.ajax({
+        url     : joined,
+        type    : "get",
+        data    : "send",
+        success : (function (data) {
+                      console.log(data);
+                      $('#recargado').append(data);
+                  })
+    });
+        </script>
