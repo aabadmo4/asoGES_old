@@ -2,14 +2,7 @@
 consumiendo webservive apirest nubezar http://nubezar.corp/APIRest/index1?opcion=
 -->
 @extends("layouts.plantilla")
-<?php
-$url = 'http://nubezar.corp/APIRest/?opcion=getDocument&id=2';
-$data = json_decode(file_get_contents($url), true);
-if (empty($data['docname'])) {
-    echo "No se ha podido cargar el doc";
-    exit();
-}
-?>
+
 @section("cabecera")
 <div class="titulos"><h1>DOCUMENTOS</h1></div>
 
@@ -27,11 +20,11 @@ if (empty($data['docname'])) {
                     <table>
                         <tr>
                             <td><b>Nombre: </b></td>
-                            <td>{{$data["name"]}}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td><b>Fecha subida: </b></td>
-                            <td>{{$data["upload_date"]}}</td>
+                            <td></td>
                         </tr>
                     </table>
                 </td>
@@ -52,11 +45,11 @@ if (empty($data['docname'])) {
                     <table>
                         <tr>
                             <td><b>Nombre: </b></td>
-                            <td>{{$data["owner_surname"]}}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td><b>Apellidos: </b></td>
-                            <td>{{$data["owner_surname"]}}</td>
+                            <td></td>
                         </tr>
                     </table>
                 </td>
@@ -65,7 +58,7 @@ if (empty($data['docname'])) {
     </div>
 
 
-    <embed src="/storage/docs/{{$_SESSION["logged_user"]}}/{{$data["docname"]}}" type="application/pdf" width="100%" height="600px" />
+    <embed src="http://nubezar.corp/asogesAPI/pdfGenerate/?partner_id=1" type="application/pdf" width="100%" height="600px" />
 </div>
 @endsection
 

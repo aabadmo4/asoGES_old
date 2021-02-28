@@ -10,11 +10,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <style>
 
             /* sign in FORM */
+            html,body{
+                 background-image: url("/storage/background.png");
+            }
+            .titulos {
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+            }
+
             #logreg-forms{
                 width:412px;
                 margin:10vh auto;
@@ -107,19 +116,7 @@
                     height: 56px;
 
                 }
-                #logreg-forms .social-btn:nth-child(1){
-                    margin-bottom: 5px;
-                }
-                #logreg-forms .social-btn span{
-                    display: none;
-                }
-                #logreg-forms  .facebook-btn:after{
-                    content:'Facebook';
-                }
 
-                #logreg-forms  .google-btn:after{
-                    content:'Google+';
-                }
 
             }
         </style>
@@ -151,14 +148,24 @@
         <div id="logreg-forms">
             <form class="form-signin" action="http://nubezar.corp:8000/_login" method="GET">
                 <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> INICIAR SESIÓN</h1>
-                <div class="social-login">
-                    <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Iniciar sesión con Facebook</span> </button>
-                    <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Iniciar sesión con Google</span> </button>
-                </div>
-                <p style="text-align:center"> O USA CON TUS CREDENCIALES  </p>
-                <input type="text" id="inputEmail" class="form-control" placeholder="Correo electrónico" required="" autofocus="" name="txtuser">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="" name="txtpassword">
-
+                <p style="text-align:center"> Use sus credenciales para iniciar sesión.  </p>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="txtUser"><b>Usuario:</label></b>
+                        </td>
+                        <td><input type="text" id="txtUser" class="form-control" placeholder="Usuario" required="" autofocus="" name="txtuser"></td>
+                    </tr>
+                    <tr><td> </td><td> </td></tr><tr><td> </td><td> </td></tr><tr><td> </td><td> </td></tr>
+                    <tr>
+                        <td>
+                            <label for="txtPassword"><b>Contraseña:</b></label>
+                        </td>
+                        <td>
+                            <input type="password" id="txtPassword" class="form-control" placeholder="Contraseña" required="" name="txtpassword">
+                        </td>
+                    </tr>
+                </table>
                 <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</button>
                 <a href="#" id="forgot_pswd">¿Has olvidado tu contraseña??</a>
                 <hr>
@@ -202,7 +209,7 @@
 
         </div>
         <p style="text-align:center">
-            <a href="http://bit.ly/2RjWFMfunction toggleResetPswd(e){
+            <a href="function toggleResetPswd(e){
                e.preventDefault();
                $('#logreg-forms .form-signin').toggle() // display:block or none
                $('#logreg-forms .form-reset').toggle() // display:block or none

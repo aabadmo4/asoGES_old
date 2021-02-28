@@ -50,8 +50,9 @@ $data_docs= Models\Charters::countCharters();
                         Docs
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_CHARTERS')}}/create">Subir</a></li>
+                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_CHARTERS')}}">Actas</a></li>
                         <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_CHARTERS')}}/create">Subir</a></li>
                         <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_ACTAS')}}">Registro<kbd>{{$data_docs["charters"]}}</kbd></a></li>
                     </ul>
                 </li>
