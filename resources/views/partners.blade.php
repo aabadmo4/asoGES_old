@@ -5,30 +5,27 @@
 
 @section("infoGeneral")
 <div class="contenido">
-    <div class="subtitulos"><h4>CONSULTAR SOCIOS</h4></div>
+    <div class="subtitulos"><h4>CONSULTAR USUARIOS {{$_SESSION["token"]}}</h4></div>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellidos</th>
-                <th scope="col">Email</th>
-                <th scope="col">CP</th>
-                <th scope="col"></th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Socio</th>
+                <th scope="col">Fecha alta</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($arreglo as $post) 
             <tr>
                 <td>{{$post['id']}}</td>
-                <td>{{$post['name']}}</td>
-                <td>{{$post['surname']}}</td>
-                <td>{{$post['email']}}</td>
-                <td>{{$post['cp']}}</td>
-                <td><a href="http://nubezar.corp:8000/partners/info_socio?id={{$post['id']}}" class="btn btn-success">X</a>
-                    <a href="#" class="btn btn-warning">X</a>
-                    <a href="#" class="btn btn-danger">X</a>
-                </td>
+                <td>{{$post['username']}}</td>
+                <td>{{$post['type_name']}}</td>
+                <td>{{$post['status_name']}}</td>
+                <td><a href="http://nubezar.corp:8000/partners/info_socio?id={{$post['partner_id']}}" class="btn btn-success">Ver socio</a></td>
+                <td>{{$post['created_at']}}</td>
             </tr>
             @endforeach
         </tbody>

@@ -8,7 +8,7 @@ Route::get("/partners/info_socio","sociosController@info_socio");
 Route::get("/partners/borrar","miController@borrar_socio");
 Route::get("/charters","chartersController@charters");
 Route::get("/charters/create","chartersController@createCharter");
-Route::get("/contact","miController@contactar");
+
 Route::get("/buscar","miController@buscar");
 Route::get("/profile/","profileController@profile");
 Route::get("/profile/config","profileController@miperfil_config");
@@ -16,7 +16,6 @@ Route::get("/profile/resetPassword","profileController@resetPassword");
 Route::get("/logout","sessionController@logout");
 Route::get("/login","sessionController@loginPage");
 Route::get("/_login","sessionController@logado");
-Route::get("/noticias","miController@noticias");
 Route::get("/info","miController@info");
 Route::post('/subir','profileController@subirArchivo')->name('subir');
 Route::get("/documents/pdf_viewer","documentsController@pdf_viewer");

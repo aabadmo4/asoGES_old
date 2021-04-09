@@ -10,7 +10,7 @@ class sociosController extends Controller {
     public function partners() {
         session_start();
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
-            $arreglo=Models\Partners::getPartners();
+            $arreglo=Models\Partners::getPartners($_SESSION["token"]);
             return view('partners')->with('arreglo', $arreglo);
         } else {
             return view("login", compact("redirect"));

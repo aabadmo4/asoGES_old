@@ -8,7 +8,7 @@
         <style>
             html, body {
                 background-color: #aaa;
-                background-image: url("/storage/background.png");
+                background-image: url("http://app.asoges/APIRest/img/background.png");
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -95,6 +95,7 @@
                 text-align: center;
                 color: black;
                 text-decoration: underline overline;
+                background-color: teal;
             }
         </style>
     </head>
@@ -118,16 +119,15 @@
 
                 <div class="links">
                     <a href="{{env('ASOGES_URL')}}">Inicio</a>
+ 
+                    @if($_SESSION["logged"]==true)
                     <a href="{{env('NAVBAR_LINK_PARTNERS')}}">Socios</a>
                     <a href="{{env('NAVBAR_LINK_ACTAS')}}">Actas</a>
-                    <a href="{{env('NAVBAR_LINK_NOTICIAS')}}">Noticias</a>
-                    <a href="{{env('NAVBAR_LINK_CONTACTO')}}">Contacto</a>
-                        
-                    @if($_SESSION["logged"]==true)
                     <a href="{{env('NAVBAR_LINK_LOGOUT')}}">Cerrar sesión</a>
                     @else
                     <a href="{{env('NAVBAR_LINK_LOGIN')}}">Iniciar sesión</a>
                     @endif
+                    <a href="{{env('NAVBAR_LINK_LOGIN')}}">Soporte Técnico</a>
                 </div>
             </div>
         </div>
