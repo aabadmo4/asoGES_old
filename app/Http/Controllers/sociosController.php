@@ -1,6 +1,9 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models;
+
 class sociosController extends Controller {
 
     public function index() {
@@ -10,10 +13,12 @@ class sociosController extends Controller {
     public function partners() {
         session_start();
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
-            $arreglo=Models\Partners::getPartners($_SESSION["token"]);
-            return view('partners')->with('arreglo', $arreglo);
-        } else {
-            return view("login", compact("redirect"));
+            $arreglo = Models\Partners::getPartners($_SESSION["token"]);
+            if (array_key_exists("result", $arreglo)) {
+                return view("login", compact("redirect"));
+            } else {
+                return view('partners_users')->with('arreglo', $arreglo);
+            }
         }
     }
 
@@ -27,17 +32,15 @@ class sociosController extends Controller {
         return "borra user #" . $id;
     }
 
-
     public function info_socio() {
         session_start();
         if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
-            $data=Models\Partners::getPartnerById($_GET["id"]);
+            $data = Models\Partners::getPartnerById($_GET["id"]);
             return view('info_socio')->with('data', $data);
         } else {
             $err = "error002";
             return view("welcome", compact("err"));
         }
     }
-
 
 }

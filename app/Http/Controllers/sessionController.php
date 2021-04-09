@@ -28,11 +28,14 @@ class sessionController extends Controller {
         if (!isset($_SESSION["logged_user"])) {
             echo "no puede cerrarvsesion sin iniciar antes";
         }
-        Models\Sessions::destroyToken($_SESSION["token"]);
-        session_destroy();
-        session_start();
-        $_SESSION["logged"] = false;
-        return view("welcome");
+        if (Models\Sessions::destroyToken($_SESSION["token"])) {
+            session_destroy();
+            session_start();
+            $_SESSION["logged"] = false;
+            return view("welcome");
+        }else{
+            die("Error al destruir el token, su estado ya era false.");
+        }
     }
 
 }
