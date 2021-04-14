@@ -3,8 +3,7 @@ namespace App\Models;
 class Partners{
     public static function getPartners($token){
         $json = file_get_contents("http://nubezar.corp:8081/?resource=users&action=getAll&token=$token");
-        return json_decode($json, "false");
-        
+        return json_decode($json, "false");  
     }
     public static function getPartnerById($id){
         $data = json_decode(file_get_contents('http://nubezar.corp/APIRest/_Partners?opcion=getPartner&id='.$id), true);

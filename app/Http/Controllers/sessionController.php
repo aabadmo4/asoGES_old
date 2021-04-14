@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models;
+use App\Mail;
 
 class sessionController extends Controller {
 
@@ -26,7 +27,7 @@ class sessionController extends Controller {
     public function logout() {
         session_start();
         if (!isset($_SESSION["logged_user"])) {
-            echo "no puede cerrarvsesion sin iniciar antes";
+            echo "no puede cerrar sesion sin iniciar antes";
         }
         if (Models\Sessions::destroyToken($_SESSION["token"])) {
             session_destroy();

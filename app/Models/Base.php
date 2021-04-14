@@ -3,10 +3,11 @@
 namespace App\Models;
 
 class Base {
-    public $url;
+    public $port;
     public $resource;
+    public $action;
     function __construct($resource) {
-        $this->url="http://nubezar.corp/APIRest/_$resource/?opcion=";   
+        $this->url="http://nubezar.corp:/APIRest/_$resource/?opcion=";   
     }
     public static function getAll() {
         $json = file_get_contents($this->url."get".$this->resource);

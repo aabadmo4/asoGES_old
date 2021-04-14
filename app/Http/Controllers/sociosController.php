@@ -9,22 +9,27 @@ class sociosController extends Controller {
     public function index() {
         return view("welcome");
     }
-
     public function partners() {
         session_start();
-        if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
+        if(authController::isAuthenticate()){
             $arreglo = Models\Partners::getPartners($_SESSION["token"]);
             if (array_key_exists("result", $arreglo)) {
                 return view("login", compact("redirect"));
             } else {
-                return view('partners_users')->with('arreglo', $arreglo);
+                return view('users.users_list')->with('arreglo', $arreglo);
             }
+        }else{
+            return view("login", compact("redirect"));
         }
     }
 
     public function createPartner() {
         session_start();
-        return view("createPartner");
+        if(authController::isAuthenticate()){
+            return view("createPartner");
+        }else{
+            return view("login", compact("redirect"));
+        }
     }
 
     public function borrar_socio($id) {
@@ -34,10 +39,10 @@ class sociosController extends Controller {
 
     public function info_socio() {
         session_start();
-        if (isset($_SESSION["logged_user"]) & !empty($_SESSION["logged_user"])) {
+        if(authController::isAuthenticate()){
             $data = Models\Partners::getPartnerById($_GET["id"]);
             return view('info_socio')->with('data', $data);
-        } else {
+        }else{
             $err = "error002";
             return view("welcome", compact("err"));
         }

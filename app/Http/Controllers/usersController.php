@@ -5,9 +5,16 @@ class usersController extends Controller
 {
     public function users() {
         session_start();
-        $arreglo= Models\Users::getAll();
-        return view('users')->with('data', $arreglo);
-        
+        if(authController::isAuthenticate()){
+            $arreglo = Models\Partners::getPartners($_SESSION["token"]);
+            if (array_key_exists("result", $arreglo)) {
+                return view("login", compact("redirect"));
+            } else {
+                return view('users.users_list')->with('arreglo', $arreglo);
+            }
+        }else{
+            return view("login", compact("redirect"));
+        }
     }
     public function createPage() {
         session_start();
