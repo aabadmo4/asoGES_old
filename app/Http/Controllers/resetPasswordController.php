@@ -60,7 +60,7 @@ class resetPasswordController extends Controller {
 
     public function resetPassword(Request $request) {
         if ($request->input("txtemail") != "") {
-            if (file_get_contents("http://nubezar.corp/asogesAPI/sendtoken?email=d&token=".$this->generateToken("21"))) {
+            if (file_get_contents("https://asoges.es/mail/sendtoken.php?email=d&token=".$this->generateToken("21"))) {
                 return view("users.mailresetok");
             }
         }

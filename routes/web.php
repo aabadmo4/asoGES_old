@@ -28,10 +28,12 @@ Route::post('newdoc', 'StorageController@save');
 Route::get('primaryOrders', 'primaryOrdersController@getOrders');
 Route::get('primaryOrders/getOrderInfoById', 'primaryOrdersController@getOrderInfoById');
 
+//--accidental borrado de la clase usersController
 Route::get("/users","usersController@users");
 Route::get("/users/create","usersController@createPage");
 Route::get("/users/createuser","usersController@createuser");
 Route::get("/users/resetpassword/","usersController@resetPassword");
+//--
 
 Route::get("/resetpassword/","resetPasswordController@resetPassword");
 Route::get("/resetpassword/{user_id}","resetPasswordController@newToken");

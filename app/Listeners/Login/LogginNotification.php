@@ -14,6 +14,6 @@ class LogginNotification
 
     public function handle($event)
     {
-        file_get_contents('http://nubezar.corp/asogesAPI/sendemaillogin?user='.$event->user["logged_user"]);
+        file_get_contents('https://asoges.es/mail/sendemaillogin.php?user='.$event->user["logged_user"]);
     }
 }
