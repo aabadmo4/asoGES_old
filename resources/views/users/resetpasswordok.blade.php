@@ -4,7 +4,7 @@
 @endsection
 
 @section("infoGeneral")
-mail reset ok
+Se ha restablecido la contraseña correctamente.
 
 @endsection
 

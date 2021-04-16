@@ -9,9 +9,9 @@
     <div class="subtitulos"><h4>RESET PWD</h4></div>
     <form action="/resetpassword/setNewPassword/conf/" method="get">
         <label>Nueva Contraseña*</label>
-        <input type="text" name="txtnewpassword1" required>
+        <input type="password" name="txtnewpassword1" required>
         <label>Repite Nueva Contraseña*</label>
-        <input type="text" name="txtnewpassword2" required>
+        <input type="password" name="txtnewpassword2" required>
         <input type="text" name="user_id" value="{{$data["user_id"]}}" readonly hidden>
         <input type="text" name="pwd_token" value="{{$data["pwd_token"]}}" readonly hidden>
         <input type="submit" >
