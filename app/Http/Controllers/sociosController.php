@@ -47,5 +47,4 @@ class sociosController extends Controller {
             return view("welcome", compact("err"));
         }
     }
-
 }

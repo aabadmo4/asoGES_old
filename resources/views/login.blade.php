@@ -177,9 +177,11 @@
                 @endif
             </form>
 
-            <form action="/profile/resetPassword" class="form-reset" method="POST">
-                <input type="email" id="resetEmail" class="form-control" placeholder="Correo electrónico" required="" autofocus="">
-                <button class="btn btn-primary btn-block" type="submit">Repite la contraseña</button>
+            <form action="resetpassword" class="form-reset" method="get">
+                <p style="text-align:center"> Si ha olvidado su contraseña puede restablecerla mediante el siguiente formulario.  </p>
+                <p style="text-align:center"> Podrá configurar su nueva contraseña mediante el enlace .  </p>
+                <input type="email" name="txtemail" id="resetEmail" class="form-control" placeholder="Correo electrónico" required="" autofocus="">
+                <button class="btn btn-primary btn-block" type="submit">Restablecer contraseña.</button>
                 <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Volver</a>
             </form>
 

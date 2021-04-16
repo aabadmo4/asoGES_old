@@ -13,6 +13,9 @@ Route::get("/buscar","miController@buscar");
 Route::get("/profile/","profileController@profile");
 Route::get("/profile/config","profileController@miperfil_config");
 Route::get("/profile/resetPassword","profileController@resetPassword");
+Route::get("/profile/resetPassword/newToken","profileController@resetPassword");
+
+
 Route::get("/logout","sessionController@logout");
 Route::get("/login","sessionController@loginPage");
 Route::get("/_login","sessionController@logado");
@@ -28,6 +31,14 @@ Route::get('primaryOrders/getOrderInfoById', 'primaryOrdersController@getOrderIn
 Route::get("/users","usersController@users");
 Route::get("/users/create","usersController@createPage");
 Route::get("/users/createuser","usersController@createuser");
+Route::get("/users/resetpassword/","usersController@resetPassword");
+
+Route::get("/resetpassword/","resetPasswordController@resetPassword");
+Route::get("/resetpassword/{user_id}","resetPasswordController@newToken");
+Route::get("/resetpassword/setNewPassword/{user_id}/{pwd_token}","resetPasswordController@resetPasswordForm");
+Route::get("/resetpassword/setNewPassword/conf","resetPasswordController@conf");
+Route::get("/resetpassword/token/{user_id}/{newpass}/{pwd_token}","resetPasswordController@updatePassword");
+
 
 
 Route::get("/config","pagesController@configPage");

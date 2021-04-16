@@ -25,7 +25,7 @@ class profileController extends Controller {
     }
 
     public function resetPasssword() {
-        return view("welcome");
+        return view("myprofile.resetpassword");
     }
 
     public function subirArchivo(Request $request) {
@@ -40,7 +40,7 @@ class profileController extends Controller {
             exit();
         }
         dd("El documento se ha subido correctamente. Documento:" . $nombre);
-        return view("miperfil");
+        return view("myprofile.miperfil");
     }
 
 }
