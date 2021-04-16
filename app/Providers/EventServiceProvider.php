@@ -15,9 +15,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        \App\Events\UserLogged::class=>[ \App\Listeners\LogginNotification::class,
-                                         \App\Listeners\SetUserDataInSession::class
-                                        ]
+        \App\Events\UserLogged::class=>[ \App\Listeners\Login\LogginNotification::class,
+                                         \App\Listeners\Login\SetUserDataInSession::class
+                                       ]
         ];
 
     /**
