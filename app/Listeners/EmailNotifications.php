@@ -25,6 +25,8 @@ class EmailNotifications
      */
     public function handle($event)
     {
-        if($event)
+        if($event){
+            
+        }
     }
 }
