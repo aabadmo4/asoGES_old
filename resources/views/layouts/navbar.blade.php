@@ -85,7 +85,7 @@ $data_docs = Models\Charters::countCharters();
                 @endif        
                 </li>
             </ul>
-            <label><b>{{env('ORGANIZACION_CLIENTE')}}</b></label>
+            <label><b>{{$_SESSION["logged_user_association_name"]}}</b></label>
             <button type="button" class="btn btn-primary">
                 @ {{$_SESSION["logged_user"]}} <a href="#" onclick="javascript:recargar();"><span class="badge bg-secondary"><div id="recargado"></div></span></a>
                 <span class="visually-hidden"></span>

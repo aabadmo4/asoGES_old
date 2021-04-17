@@ -38,7 +38,8 @@ class sessionController extends Controller {
                 "logged_user_id" => $user_id["logged_user_id"],
                 "logged_user_rol_id" => $user_id["logged_user_rol_id"],
                 "logged" => true,
-                "token" => $user_id["token"]);
+                "token" => $user_id["token"],
+                "association_id"=>$user_id["association_id"]);
             event(new UserLogged($user_logged));
 
             //return view("welcome");

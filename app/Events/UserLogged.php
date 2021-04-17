@@ -22,6 +22,7 @@ class UserLogged
     public function __construct($user)
     {
         $this->user=array("logged_user"=>$user["logged_user"],
+                          "logged_user_association_id"=>$user["association_id"],
                           "logged_user_id"=>$user["logged_user_id"],
                            "logged_user_rol_id"=>$user["logged_user_rol_id"],
                            "logged"=>true,
