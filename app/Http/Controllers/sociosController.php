@@ -12,11 +12,12 @@ class sociosController extends Controller {
     public function partners() {
         session_start();
         if(authController::isAuthenticate()){
+            //if(Token::isValid()){}->
             $arreglo = Models\Partners::getPartners($_SESSION["token"]);
             if (array_key_exists("result", $arreglo)) {
                 return view("login", compact("redirect"));
             } else {
-                return view('users.users_list')->with('arreglo', $arreglo);
+                return view('partners.all')->with('arreglo', $arreglo);
             }
         }else{
             return view("login", compact("redirect"));
@@ -40,8 +41,8 @@ class sociosController extends Controller {
     public function info_socio() {
         session_start();
         if(authController::isAuthenticate()){
-            $data = Models\Partners::getPartnerById($_GET["id"]);
-            return view('info_socio')->with('data', $data);
+            $data = Models\Partners::getPartnerById($_GET["id"],$_SESSION["token"]);
+            return view('partners.info')->with('data', $data);
         }else{
             $err = "error002";
             return view("welcome", compact("err"));

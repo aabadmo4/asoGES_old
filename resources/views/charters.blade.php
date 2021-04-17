@@ -1,6 +1,6 @@
 @extends("layouts.plantilla")
 @section("cabecera")
-<div class="titulos"><h1>ACTAS</h1></div>
+<!--<div class="titulos"><h1>ACTAS</h1></div>-->
 @endsection
 
 @section("infoGeneral")

@@ -48,6 +48,7 @@
 <body>
     @include("layouts.navbar")
     @yield("cabecera")
+    <div class="titulos"><h1>asoGES - Sistema de Gestión de Asociaciones</h1></div>
     <div class="centro_pagina">
         @yield("infoGeneral")
     </div>

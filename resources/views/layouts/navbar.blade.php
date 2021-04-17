@@ -27,6 +27,9 @@ $data_docs = Models\Charters::countCharters();
                         <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_SOCIOS_CREATE')}}">Crear</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{{env('NAVBAR_LINK_PARTNERS')}}">Consultar socios<kbd id="countpartners"></kbd></a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/users">Consultar usuarios<kbd id="countpartners"></kbd></a></li>
+
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
