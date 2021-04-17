@@ -7,7 +7,7 @@
     <div class="subtitulos"><h4>CONSULTAR SOCIO</h4></div>
     <table class="tablafoto">
         <tr>
-            <td><img src="http://nubezar.corp/APIRest/img/avatar.png" alt="" width="200px" height="200px" /></td>
+            <td><img src="http://nubezar.corp/APIRest/img/avatar.png" alt="" width="200px" height="200px"/></td>
         </tr>
     </table>
     <form >

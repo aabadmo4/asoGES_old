@@ -17,8 +17,10 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         \App\Events\UserLogged::class=>[ \App\Listeners\Login\LogginNotification::class,
                                          \App\Listeners\Login\SetUserDataInSession::class
-                                       ]
+                                       ],
+        \App\Events\UserLogout::class=>[\App\Listeners\Logout\DeleteSession::class]
         ];
+    
 
     /**
      * Register any events for your application.

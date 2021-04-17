@@ -19,4 +19,17 @@ class usersController extends Controller
             return view("login", compact("redirect"));
         }
     }
+    public function setStatus($user_id,$new_status) {
+        //http://nubezar.corp:8081/?resource=users&action=updateStatus&id=12&new_status=3
+        session_start();
+        if(authController::isAuthenticate()){
+            if (Models\Users::setStatus($user_id,$new_status)) {
+                return back();
+            } else {
+                return view("login", compact("redirect"));
+            }
+        }else{
+            return view("login", compact("redirect"));
+        }
+    }
 }

@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Http\Controllers;
-
 class Sessions {
 
     public static function authUser($txtuser, $txtpassword) {
@@ -15,8 +14,7 @@ class Sessions {
                 return array("logged_user" => "$txtuser",
                     "logged_user_id" => $data["session"]["user_id"],
                     "logged_user_rol_id" => 2,
-                    "token" => $data["session"]["token"]);
-                ;
+                    "token" => $data["session"]["token"]);  
             } else {
                 echo "User status not valid.";
                 exit();

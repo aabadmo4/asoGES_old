@@ -146,7 +146,7 @@
             })
         </script>
         <div id="logreg-forms">
-            <form class="form-signin" action="http://nubezar.corp:8000/_login" method="GET">
+            <form class="form-signin" action="http://nubezar.corp:8000/_login" method="get">
                 <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> INICIAR SESIÓN</h1>
                 <p style="text-align:center"> Use sus credenciales para iniciar sesión.  </p>
                 <table>

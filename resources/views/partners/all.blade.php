@@ -14,10 +14,7 @@
                 <th scope="col">Apellidos</th>
                 <th scope="col">Tipo Doc.</th>
                 <th scope="col">Documento</th>
-                <th scope="col">Dirección</th>
-                <th scope="col">Ciudad</th>
-                <th scope="col">Provincia</th>
-                <th scope="col">Fecha nacimiento</th>
+                <th scope="col">Tipo Socio</th>
                 <th scope="col">Usuario</th>
             </tr>
         </thead>
@@ -29,13 +26,12 @@
                 <td>{{$post['surname']}}</td>
                 <td>{{$post['doc_type_name']}}</td>
                 <td>{{$post['document']}}</td>
-                <td>{{$post['address']}}</td>
-                <td>{{$post['city']}}</td>
-                <td>{{$post['state']}}</td>
-                <td>{{$post['birth_date']}}</td>
-                <td><a href="http://nubezar.corp:8000/partners/info_socio?id={{$post['id']}}" class="btn btn-success">Ver</a></td>
-                
-                
+                <td>{{$post['partner_type_name']}}</td>
+                <td><a href="{{env('ASOGES_URL')}}/users/view/{{$post['id']}}" class="btn btn-success">Ver</a></td>
+                <td><a href="{{env('ASOGES_URL')}}/partners/view/{{$post['id']}}" class="btn btn-success">X</a>
+                    <a href="{{env('ASOGES_URL')}}/users/edit/{{$post['id']}}" class="btn btn-warning">X</a>
+                    <a href="{{env('ASOGES_URL')}}/users/delete/{{$post['id']}}" class="btn btn-danger">X</a>
+                </td> 
             </tr>
             @endforeach
         </tbody>

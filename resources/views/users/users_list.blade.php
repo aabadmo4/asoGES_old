@@ -26,15 +26,17 @@
                 <td>{{$post['type_name']}}</td>
                 
                 @if($post['status_name']=="Habilitado")
-                <td><a href="" class="btn btn-success">Habilitado</a></td>
+                <td><a href="{{env('ASOGES_URL')}}/users/edit/{{$post['id']}}/status_to/2" class="btn btn-success">Habilitado</a></td>
                 @else
-                <td><a href="" class="btn btn-danger active">Deshabilitado</a></td>  
+                <td><a href="{{env('ASOGES_URL')}}/users/edit/{{$post['id']}}/status_to/1" class="btn btn-danger active">Deshabilitado</a></td>  
                 @endif
-                <td><a href="{{env('ASOGES_URL')}}/partners/info_socio?id={{$post['partner_id']}}" class="btn btn-success">Ver socio</a></td>
+                
+                <td><a href="{{env('ASOGES_URL')}}/partners/view/{{$post['partner_id']}}" class="btn btn-info">Ver socio</a></td>
                 <td>{{$post['created_at']}}</td>
-                <td><a href="{{env('ASOGES_URL')}}/users/view/{{$post['id']}}" class="btn btn-success">X</a>
+                <td><a href="{{env('ASOGES_URL')}}/users/view/{{$post['id']}}"><img src="http://nubezar.corp/APIRest/img/ver.png" alt="" width="50px" height="50px"/></a>
                     <a href="{{env('ASOGES_URL')}}/users/edit/{{$post['id']}}" class="btn btn-warning">X</a>
-                    <a href="{{env('ASOGES_URL')}}/users/delete/{{$post['id']}}" class="btn btn-danger">X</a></td>
+                    <a href="{{env('ASOGES_URL')}}/users/delete/{{$post['id']}}" class="btn btn-danger">X</a>
+                </td>
             </tr>
             @endforeach
         </tbody>
