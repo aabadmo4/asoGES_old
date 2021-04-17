@@ -16,8 +16,7 @@ class sessionController extends Controller {
 
     public function logado() {
         session_start();
-        if (Models\Sessions::authUser($_GET["txtuser"], $_GET["txtpassword"])) {
-            $user_id = Models\Sessions::authUser($_GET["txtuser"], $_GET["txtpassword"]);
+        if ($user_id = Models\Sessions::authUser($_GET["txtuser"], $_GET["txtpassword"])) {
 
             $user_logged = array("logged_user" => $_GET["txtuser"],
                 "logged_user_id" => $user_id["logged_user_id"],
@@ -27,7 +26,7 @@ class sessionController extends Controller {
             event(new UserLogged($user_logged));
 
             return view("welcome");
-        }else{
+        } else {
             die("error");
         }
     }
