@@ -26,7 +26,8 @@ class UserLogged
                           "logged_user_id"=>$user["logged_user_id"],
                            "logged_user_rol_id"=>$user["logged_user_rol_id"],
                            "logged"=>true,
-                           "token"=>$user["token"]);
+                           "token"=>$user["token"],
+                           "association_id"=>$user["association_id"]);
     }
 
     /**

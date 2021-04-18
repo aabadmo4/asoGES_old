@@ -17,10 +17,10 @@ class SetUserDataInSession {
         $_SESSION["logged_user_rol_id"] = $event->user["logged_user_rol_id"];
         $_SESSION["logged"] = $event->user["logged"];
         $_SESSION["token"] = $event->user["token"];
+        $_SESSION["logged_user_association_id"] = $event->user["association_id"];
         $_associations = new \App\Http\Controllers\associationsController;
-        $asociation=$_associations->getById($event->user["logged_user_id"]);
-        $_SESSION["logged_user_association_id"] = $asociation["id"];
-        $_SESSION["logged_user_association_name"] = $asociation["name"];
+        $asociation_data=$_associations->getById($event->user["association_id"]);
+        $_SESSION["logged_user_association_name"] = $asociation_data["name"];
     }
 
 }

@@ -14,7 +14,8 @@ class Sessions {
                 return array("logged_user" => "$txtuser",
                     "logged_user_id" => $data["session"]["user_id"],
                     "logged_user_rol_id" => 2,
-                    "token" => $data["session"]["token"]);  
+                    "token" => $data["session"]["token"],
+                    "association_id"=>$data["session"]["association_id"]);  
             } else {
                 echo "User status not valid.";
                 exit();

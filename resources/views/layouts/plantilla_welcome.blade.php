@@ -127,7 +127,7 @@
                     @else
                     <a href="{{env('NAVBAR_LINK_LOGIN')}}">Iniciar sesión</a>
                     @endif
-                    <a href="{{env('NAVBAR_LINK_LOGIN')}}">Soporte Técnico</a>
+                    <a href="https://centrodeayuda.asoges.es">Soporte Técnico</a>
                 </div>
             </div>
         </div>
