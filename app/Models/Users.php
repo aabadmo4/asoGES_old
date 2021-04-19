@@ -2,7 +2,7 @@
 namespace App\Models;
 class Users{
     public static function getAll($token){
-        $json = file_get_contents("http://nubezar.corp:8081/?resource=users&action=getAll&token=$token");
+        $json = file_get_contents("http://nubezar.corp:8081/?resource=users&action=getAllByAssociationId&association_id=".$_SESSION["logged_user_association_id"]."=&token=$token");
         return json_decode($json, "false");  
     }
     public static function setStatus($user_id,$new_status) {

@@ -35,7 +35,7 @@ Route::get('primaryOrders/getOrderInfoById', 'primaryOrdersController@getOrderIn
 
 //--accidental borrado de la clase usersController
 Route::get("/users","usersController@users");
-Route::get("/users/view/{user_id}","usersController@users");
+Route::get("/users/view/{user_id}","usersController@view");
 Route::get("/users/edit/{user_id}","usersController@users");
 Route::get("/users/delete/{user_id}","usersController@users");
 Route::get("/users/create","usersController@createPage");

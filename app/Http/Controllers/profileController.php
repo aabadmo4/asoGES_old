@@ -24,8 +24,14 @@ class profileController extends Controller {
         return view("welcome");
     }
 
-    public function resetPasssword() {
-        return view("myprofile.resetpassword");
+    public function resetPassword() {
+        session_start();
+        if (isset($_SESSION["logged_user"])) {
+            return view("myprofile.resetpassword");
+        } else {
+            $err = "error002";
+            return view("welcome", compact("err"));
+        }
     }
 
     public function subirArchivo(Request $request) {
