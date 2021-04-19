@@ -52,17 +52,18 @@ class resetPasswordController extends Controller {
             //echo "Configurar nueva contraseña en este enlace <br>";
             //echo "<a href='http://nubezar.corp:8000/resetpassword/setNewPassword/$user_id/$pwdtoken'>aquí</a>";
             return $pwdtoken;
-        } else {
+        } else if ($pwdtoken == false) {
             $data = array("error" => "Error al generar el token.");
             return view("error.err_page")->with('data', $data);
         }
     }
 
     public function resetPassword(Request $request) {
-        if ($request->input("txtemail") != "") {
-            if (file_get_contents("https://asoges.es/mail/sendtoken.php?email=d&token=".$this->generateToken("21"))) {
-                return view("users.mailresetok");
+        if ($request->input("txtusername")!=NULL) {
+            if (file_get_contents("https://asoges.es/mail/sendtoken.php?user=".$request->input("txtusername")."&token=" . $this->generateToken("21"))) {
+                return view("users.mailresetok")->with('data', "sds");
             }
         }
     }
+
 }

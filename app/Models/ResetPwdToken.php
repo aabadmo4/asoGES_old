@@ -12,7 +12,7 @@ class ResetPwdToken {
         $data = json_decode(file_get_contents($url), true);
         if ($data["result"] == "succesfully") {
             return $data["password_reset_token"]["token"];
-        } else {
+        } else if ($data["result"] == "failed"){
             return false;
         }
     }

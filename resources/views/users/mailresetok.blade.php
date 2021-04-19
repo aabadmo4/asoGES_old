@@ -5,7 +5,7 @@
 
 @section("infoGeneral")
 <div class="subtitulos"><h4>RESTABLCER CONTRASEÑA</h4></div>
-Hemos enviado un enlace al correo asociado a la cuenta.
+Hemos enviado un enlace al correo asociado a la cuenta @ {{$_GET["txtusername"]}}, desde el cual podrá configurar su nueva contraseña . 
 @endsection
 
 @section("pie")
