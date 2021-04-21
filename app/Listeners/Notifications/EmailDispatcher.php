@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Listeners;
+namespace App\Listeners\Notifications;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class EmailNotifications
+class EmailDispatcher
 {
     /**
      * Create the event listener.
@@ -25,8 +25,6 @@ class EmailNotifications
      */
     public function handle($event)
     {
-        if($event){
-            
-        }
+        \App\Http\Controllers\Comunication\emailController::send($event);
     }
 }
