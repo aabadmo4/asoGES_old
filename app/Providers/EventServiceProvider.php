@@ -15,10 +15,17 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        \App\Events\UserLogged::class=>[ \App\Listeners\Login\LogginNotification::class,
-                                         \App\Listeners\Login\SetUserDataInSession::class
-                                       ],
-        \App\Events\UserLogout::class=>[\App\Listeners\Logout\DeleteSession::class]
+        \App\Events\UserLogged::class =>[
+                                            \App\Listeners\Login\SetUserDataInSession::class,
+                                            \App\Listeners\Notifications\EmailDispatcher::class
+                                        ],
+        \App\Events\UserLogout::class => [
+                                            \App\Listeners\Logout\DeleteSession::class
+                                         ],
+        \App\Events\ResetPwdNewToken::class => [
+                                                   \App\Listeners\Notifications\EmailDispatcher::class
+                                               ]
+        
         ];
     
 

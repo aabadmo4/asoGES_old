@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Models;
-
 use App\Http\Controllers;
-class Sessions {
+use Illuminate\Support\Facades\Log;
 
+class Sessions {
     public static function authUser($txtuser, $txtpassword) {
         $url = "http://nubezar.corp:8081/?resource=sessions&action=insert&username=$txtuser&password=$txtpassword&ip=" . Controllers\ToolsController::getUserIp();
         $data = json_decode(file_get_contents($url), true);
@@ -17,10 +17,12 @@ class Sessions {
                     "token" => $data["session"]["token"],
                     "association_id"=>$data["session"]["association_id"]);  
             } else {
+                Log::debug("Error al iniciar sesión. El usuario @$txtuser no está habilitado.");
                 echo "User status not valid.";
                 exit();
             }
         } else {
+            Log::debug("Error al iniciar sesión. Credenciales incorrectas.");
             echo "credential error";
             exit();
         }

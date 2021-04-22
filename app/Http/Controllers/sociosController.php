@@ -17,6 +17,7 @@ class sociosController extends Controller {
             if (array_key_exists("result", $arreglo)) {
                     return view("login", compact("redirect"));
             } else {
+                
                     return view('partners.all')->with('arreglo', $arreglo);
             }
         } else {

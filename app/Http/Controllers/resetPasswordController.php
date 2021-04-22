@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models;
+use App\Events\ResetPwdNewToken;
 
 class resetPasswordController extends Controller {
 
@@ -59,10 +60,10 @@ class resetPasswordController extends Controller {
     }
 
     public function resetPassword(Request $request) {
-        if ($request->input("txtusername")!=NULL) {
-            if (file_get_contents("https://asoges.es/mail/sendtoken.php?user=".$request->input("txtusername")."&token=" . $this->generateToken("21"))) {
-                return view("users.mailresetok")->with('data', "sds");
-            }
+        if ($request->input("txtusername") != NULL) {
+            event(new ResetPwdNewToken($request->input("txtusername"), $this->generateToken("21")));
+            return view("users.mailresetok")->with('data', "sds");
+            
         }
     }
 

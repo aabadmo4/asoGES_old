@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models;
 use App\Mail;
 use App\Events\UserLogged;
+use Illuminate\Support\Facades\Log;
 
 class sessionController extends Controller {
 
@@ -54,12 +55,14 @@ class sessionController extends Controller {
         session_start();
         if (!authController::isAuthenticate()) {
             echo "no puede cerrar sesion sin iniciar antes";
+            Log::debug("Intento fallido de cierre de sesión.");
             return view("login");
         }
         if (Models\Sessions::destroyToken($_SESSION["token"])) {
             event(new \App\Events\UserLogout());
             return view("welcome");
         } else {
+            Log::debug("Intento fallido de destrucción del token de sesión, el estado ya era 0.");
             die("Error al destruir el token, su estado ya era false.");
         }
     }

@@ -55,3 +55,6 @@ Route::get("/resetpassword/token/{user_id}/{newpass}/{pwd_token}","resetPassword
 Route::get("/config","pagesController@configPage");
 
 Route::get("/miscript","notifnotread@configPage");
+
+//--Laravel Logs Viewer
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
