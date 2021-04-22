@@ -7,7 +7,10 @@ use Illuminate\Support\Facades\Log;
 class Sessions {
     public static function authUser($txtuser, $txtpassword) {
         $url = "http://nubezar.corp:8081/?resource=sessions&action=insert&username=$txtuser&password=$txtpassword&ip=" . Controllers\ToolsController::getUserIp();
-        $data = json_decode(file_get_contents($url), true);
+        if($data = json_decode(file_get_contents($url), true)){
+            Log::debug("Error al conectar con el authserver.");
+            die("error al conectar con el servicor de auth.");
+        }
 
         if ($data["result"] == "succesfully") {
             if ($data["session"]["user_status"] == "1") {
